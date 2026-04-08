@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DM — Classificação, Fisiopatologia e Diagnóstico</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,sans-serif;background:#fff;color:#1a1a1a}
+.page{max-width:860px;margin:0 auto;padding:1.5rem 1rem}
+.page-title{font-size:22px;font-weight:500;color:#1a1a1a;margin-bottom:0.25rem;padding-bottom:1rem;border-bottom:0.5px solid #e0e0e0}
+.section{margin-bottom:2rem}
+.section-badge{font-size:11px;padding:2px 8px;border-radius:8px;font-weight:500}
+.card{background:#fff;border:0.5px solid #e0e0e0;border-radius:12px;padding:1rem 1.25rem;margin-bottom:0.75rem}
+.card-sub{background:#f7f7f7;border:0.5px solid #e0e0e0;border-radius:8px;padding:0.75rem 1rem;margin-bottom:0.5rem}
+.label{font-size:12px;color:#888;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.4rem}
+.body-text{font-size:14px;color:#1a1a1a;line-height:1.7}
+.muted{font-size:13px;color:#666;line-height:1.6}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:8px;margin:2px;font-weight:500}
+.tag-blue{background:#E6F1FB;color:#0C447C}
+.tag-green{background:#EAF3DE;color:#3B6D11}
+.tag-amber{background:#FAEEDA;color:#854F0B}
+.tag-red{background:#FCEBEB;color:#A32D2D}
+.tag-purple{background:#EEEDFE;color:#3C3489}
+.tag-gray{background:#F1EFE8;color:#5F5E5A}
+.divider{border:none;border-top:0.5px solid #e0e0e0;margin:1rem 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-weight:500;color:#666;padding:6px 10px;border-bottom:0.5px solid #e0e0e0;background:#f7f7f7}
+td{padding:6px 10px;border-bottom:0.5px solid #e0e0e0;color:#1a1a1a;vertical-align:top}
+tr:last-child td{border-bottom:none}
+.highlight-row td{background:#E6F1FB}
+.callout{border-left:3px solid;border-radius:0;padding:0.75rem 1rem;margin:0.5rem 0;font-size:13px;line-height:1.6}
+.callout-blue{border-color:#378ADD;background:#E6F1FB;color:#0C447C}
+.callout-amber{border-color:#EF9F27;background:#FAEEDA;color:#854F0B}
+.callout-red{border-color:#E24B4A;background:#FCEBEB;color:#A32D2D}
+.callout-green{border-color:#639922;background:#EAF3DE;color:#3B6D11}
+.callout-purple{border-color:#7F77DD;background:#EEEDFE;color:#3C3489}
+.complement{border-left:3px solid #7F77DD;background:#EEEDFE;border-radius:0;padding:0.75rem 1rem;margin-top:0.5rem}
+.complement .clabel{font-size:11px;font-weight:500;color:#534AB7;margin-bottom:0.4rem}
+.complement .cbody{font-size:13px;color:#3C3489;line-height:1.6}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem}
+.metric{background:#f7f7f7;border-radius:8px;padding:0.75rem 1rem;text-align:center}
+.metric-val{font-size:20px;font-weight:500;color:#1a1a1a}
+.metric-lbl{font-size:11px;color:#888;margin-top:2px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
+.nav-btn{font-size:12px;padding:4px 12px;border-radius:8px;border:0.5px solid #ccc;background:#fff;color:#666;cursor:pointer;transition:all 0.15s}
+.nav-btn:hover,.nav-btn.active{background:#E6F1FB;color:#0C447C;border-color:#378ADD}
+.section-content{display:none}
+.section-content.open{display:block}
+.checklist{list-style:none;padding:0}
+.checklist li{padding:4px 0;font-size:13px;color:#1a1a1a;display:flex;gap:8px;align-items:flex-start}
+.checklist li::before{content:"☐";color:#888;flex-shrink:0}
+ul.bullets li{font-size:13px;color:#1a1a1a;line-height:1.6;margin-bottom:4px;padding-left:0.25rem}
+ul.bullets{padding-left:1.25rem}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#E6F1FB;color:#0C447C;font-size:11px;font-weight:500;flex-shrink:0;margin-top:2px}
+.step-row{display:flex;gap:10px;margin-bottom:0.75rem}
+@media(max-width:600px){.two-col,.three-col{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="page-title">Diabetes Mellitus — Classificação, Fisiopatologia e Diagnóstico</div>
+<p class="muted" style="margin:0.5rem 0 1.25rem">MEDCOF · Clínica Médica · Ficha Premium</p>
+
+<div class="nav" id="nav">
+  <button class="nav-btn active" onclick="showSection('visao')">1. Visão Geral</button>
+  <button class="nav-btn" onclick="showSection('classif')">2. Classificação</button>
+  <button class="nav-btn" onclick="showSection('clinico')">3. Quadro Clínico</button>
+  <button class="nav-btn" onclick="showSection('rastreio')">4. Rastreamento</button>
+  <button class="nav-btn" onclick="showSection('diag')">5. Diagnóstico</button>
+  <button class="nav-btn" onclick="showSection('fisio')">6. Fisiopatologia</button>
+  <button class="nav-btn" onclick="showSection('outros')">7. Outros Tipos</button>
+  <button class="nav-btn" onclick="showSection('exames')">8. Exames</button>
+  <button class="nav-btn" onclick="showSection('metas')">9. Metas e Thresholds</button>
+  <button class="nav-btn" onclick="showSection('algo')">10. Algoritmo</button>
+  <button class="nav-btn" onclick="showSection('erros')">11. Erros e Pegadinhas</button>
+  <button class="nav-btn" onclick="showSection('revisao')">12. Revisão 30s</button>
+</div>
+
+<!-- 1. VISÃO GERAL -->
+<div id="sec-visao" class="section section-content open">
+  <div class="card">
+    <div class="label">Definição</div>
+    <p class="body-text" style="margin-bottom:0.75rem">Classificação etiológica (DM1, DM2, LADA, MODY, secundário), fisiopatologia, quadro clínico e critérios rigorosos de rastreamento e diagnóstico do Diabetes Mellitus e Pré-Diabetes.</p>
+    <hr class="divider">
+    <div class="two-col">
+      <div>
+        <div class="label">Utilidade clínica</div>
+        <p class="muted">Pontos de corte exatos e algoritmos de triagem para diagnosticar precocemente alterações na homeostase da glicose e prevenir complicações.</p>
+      </div>
+      <div>
+        <div class="label">Objetivo do bloco</div>
+        <p class="muted">Dominar FINDRISC, limiares diagnósticos (GJ, HbA1c, TTGO-1h/2h, casual) e diferenciar fenótipos clínica e laboratorialmente.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. CLASSIFICAÇÃO -->
+<div id="sec-classif" class="section section-content">
+  <div class="callout callout-blue" style="margin-bottom:1rem">
+    <strong>High-yield:</strong> DM1 = jovem + anticorpos + CAD alto · DM2 = obesidade + RI + assintomático · MODY = monogênico + multigeracional · LADA = "DM1 do adulto" + progressão lenta
+  </div>
+  <div class="card" style="overflow-x:auto">
+    <table>
+      <thead><tr><th>Critério</th><th>DM1</th><th>DM2</th><th>MODY</th><th>LADA</th></tr></thead>
+      <tbody>
+        <tr><td>Idade Dx</td><td>&lt; 25 anos</td><td>&gt; 25 anos</td><td>&lt; 25 anos</td><td>&gt; 30 anos</td></tr>
+        <tr><td>Peso</td><td>Magro</td><td>Sobrepeso/obesidade</td><td>Geral</td><td>Geral</td></tr>
+        <tr><td>Anticorpos</td><td><span class="tag tag-red">Presentes</span></td><td><span class="tag tag-gray">Ausentes</span></td><td><span class="tag tag-gray">Ausentes</span></td><td><span class="tag tag-red">Presentes</span></td></tr>
+        <tr><td>Dep. insulina</td><td>Sempre</td><td>Ocasional</td><td>Ocasional (T1/T3)</td><td>Tardio</td></tr>
+        <tr><td>Sensib. insulina</td><td>Normal</td><td><span class="tag tag-amber">Reduzida</span></td><td>Normal</td><td>Normal</td></tr>
+        <tr><td>Hist. familiar</td><td>Infrequente</td><td>Frequente</td><td><span class="tag tag-purple">Multigeracional</span></td><td>Infrequente</td></tr>
+        <tr><td>Risco CAD</td><td><span class="tag tag-red">Alto</span></td><td><span class="tag tag-green">Baixo</span></td><td><span class="tag tag-green">Baixo</span></td><td><span class="tag tag-amber">Intermediário</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="complement">
+    <div class="clabel">📌 Complementação — Estadiamento do DM1 (SBD/ISPAD/ADA)</div>
+    <div class="cbody">
+      <strong>Estágio 1:</strong> ≥ 2 autoanticorpos + normoglicemia + assintomático<br>
+      <strong>Estágio 2:</strong> ≥ 2 autoanticorpos + disglicemia (pré-DM) + assintomático<br>
+      <strong>Estágio 3A/3B:</strong> DM1 clínico — 3A assintomático, 3B sintomático com necessidade imediata de insulina<br>
+      <strong>Estágio 4:</strong> DM1 de longa duração<br>
+      <span style="opacity:0.8">Reconhecer fases pré-clínicas permite rastreio familiar, prevenção de CAD na abertura e seleção para imunomoduladores (teplizumabe).</span>
+    </div>
+  </div>
+</div>
+
+<!-- 3. QUADRO CLÍNICO -->
+<div id="sec-clinico" class="section section-content">
+  <div class="two-col" style="margin-bottom:0.75rem">
+    <div class="card">
+      <div class="label" style="color:#A32D2D">Sintomas típicos</div>
+      <ul class="bullets">
+        <li>Poliúria</li><li>Polidipsia</li><li>Polifagia</li>
+        <li>Perda de peso inexplicada</li><li>Desidratação</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label" style="color:#854F0B">Sintomas sugestivos</div>
+      <ul class="bullets">
+        <li>Noctúria</li><li>Visão turva</li><li>Cansaço</li>
+        <li>Infecções recorrentes (candidíase, periodontite)</li>
+        <li>Má cicatrização</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout callout-amber">
+    "Polis" + perda de peso → pensar forte em hiperglicemia, especialmente DM1. Assintomático ≠ sem doença: DM2 frequentemente aparece no rastreamento.
+  </div>
+  <div class="complement">
+    <div class="clabel">📌 Complementação</div>
+    <div class="cbody">Albuminúria transitória em pacientes com DM1 com menos de 5 anos de doença também é sinal sugestivo — amplia suspeição em oligossintomáticos.</div>
+  </div>
+</div>
+
+<!-- 4. RASTREAMENTO -->
+<div id="sec-rastreio" class="section section-content">
+  <div class="two-col" style="margin-bottom:0.75rem">
+    <div class="card">
+      <div class="label">Quem rastrear</div>
+      <ul class="bullets">
+        <li><strong>Todos ≥ 35 anos</strong></li>
+        <li>&lt; 35 anos + IMC ≥ 25 + ≥ 1 fator de risco:</li>
+      </ul>
+      <div style="margin-top:0.5rem;display:flex;flex-wrap:wrap;gap:4px">
+        <span class="tag tag-gray">Sedentarismo</span>
+        <span class="tag tag-gray">Hist. familiar 1º grau</span>
+        <span class="tag tag-gray">DMG prévio</span>
+        <span class="tag tag-gray">Acantose nigricans</span>
+        <span class="tag tag-gray">HAS / DCV prévia</span>
+        <span class="tag tag-amber">HDL &lt; 35 mg/dL</span>
+        <span class="tag tag-amber">TGL &gt; 250 mg/dL</span>
+        <span class="tag tag-gray">SOP</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="label">Indicações adicionais</div>
+      <ul class="bullets">
+        <li>Pré-DM em exame prévio</li>
+        <li>DMG prévio / RN GIG</li>
+        <li>FINDRISC alto/muito alto</li>
+        <li>Endocrinopatias / HIV</li>
+        <li>DHGM</li>
+        <li>Antes/após glicocorticoide ou antipsicóticos atípicos (clorpromazina, clozapina, olanzapina, quetiapina, risperidona)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="label">Como rastrear</div>
+    <p class="body-text">Preferencialmente: <strong>Glicemia de jejum + HbA1c</strong></p>
+    <hr class="divider">
+    <div class="three-col">
+      <div class="metric"><div class="metric-val">3 anos</div><div class="metric-lbl">Sem fator de risco</div></div>
+      <div class="metric"><div class="metric-val">12 meses</div><div class="metric-lbl">Com fator de risco</div></div>
+      <div class="metric"><div class="metric-val">6 meses</div><div class="metric-lbl">1 exame alterado</div></div>
+    </div>
+  </div>
+  <div class="complement">
+    <div class="clabel">📌 Complementações</div>
+    <div class="cbody">
+      <strong>Pediátrico (DM2):</strong> rastrear a partir de 10 anos (ou pós-puberdade) com sobrepeso + 1 fator de risco.<br>
+      <strong>Familiares de DM1:</strong> dosagem de autoanticorpos (anti-GAD, anti-IA2, IAA, anti-ZnT8), iniciar entre 2–4 anos de idade.<br>
+      <strong>Periodicidade detalhada:</strong> FINDRISC baixo/moderado ou &lt; 3 fatores → 3 anos · FINDRISC alto/muito alto ou ≥ 3 fatores → 12 meses · 1 exame alterado → 6 meses.
+    </div>
+  </div>
+</div>
+
+<!-- 5. DIAGNÓSTICO -->
+<div id="sec-diag" class="section section-content">
+  <div class="callout callout-red" style="margin-bottom:0.75rem">
+    <strong>Ponto de prova:</strong> sintomas clássicos + glicemia casual &gt; 200 mg/dL → fecha diagnóstico sem necessidade de repetição ou jejum.
+  </div>
+  <div class="card" style="margin-bottom:0.75rem">
+    <div class="label">Princípios diagnósticos</div>
+    <ul class="bullets">
+      <li>1 exame alterado (GJ <em>ou</em> HbA1c) → <strong>repetir</strong></li>
+      <li>2 exames distintos alterados na mesma ocasião (GJ <em>+</em> HbA1c) → <strong>confirma</strong></li>
+      <li>Sintomas clássicos + casual &gt; 200 → <strong>confirma sem repetição</strong></li>
+    </ul>
+  </div>
+  <div class="card" style="overflow-x:auto">
+    <div class="label">Valores de corte</div>
+    <table>
+      <thead><tr><th>Exame</th><th><span class="tag tag-green">Normal</span></th><th><span class="tag tag-amber">Pré-DM</span></th><th><span class="tag tag-red">DM</span></th></tr></thead>
+      <tbody>
+        <tr><td>Glicemia de jejum (mg/dL)</td><td>&lt; 100</td><td>100 – 125</td><td>≥ 126</td></tr>
+        <tr><td>HbA1c (%)</td><td>&lt; 5,7</td><td>5,7 – 6,4</td><td>≥ 6,5</td></tr>
+        <tr class="highlight-row"><td>TTGO 1h (mg/dL) ★ preferencial</td><td>&lt; 155</td><td>155 – 208</td><td>≥ 209</td></tr>
+        <tr><td>TTGO 2h (mg/dL)</td><td>&lt; 140</td><td>140 – 199</td><td>≥ 200</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout callout-blue" style="margin-top:0.75rem">
+    <strong>Regra prática:</strong> GJ ≥ 100–125 e/ou HbA1c 5,7–6,4 (pré-DM) + ≥ 3 fatores de risco ou FINDRISC alto → solicitar <strong>TTGO-1h</strong>. Mesmo exames normais não excluem DM nesse cenário.
+  </div>
+  <div class="complement">
+    <div class="clabel">📌 Complementações</div>
+    <div class="cbody">
+      <strong>Jejum:</strong> cessação calórica de 8–12h. HbA1c deve ser medida por método NGSP (ex: HPLC).<br>
+      <strong>TTGO-1h é superior ao TTGO-2h</strong> na detecção precoce da falha de secreção beta — deve ser o preferencial quando indicada sobrecarga (SBD/IDF).<br>
+      <strong>Crise hiperglicêmica (CAD/EHH):</strong> glicemia casual ≥ 200 fecha diagnóstico sem repetição — não atrasar tratamento.
+    </div>
+  </div>
+</div>
+
+<!-- 6. FISIOPATOLOGIA -->
+<div id="sec-fisio" class="section section-content">
+  <div class="two-col">
+    <div class="card">
+      <div class="label" style="color:#A32D2D">DM tipo 1</div>
+      <ul class="bullets">
+        <li>5–10% dos diabéticos</li>
+        <li>Crianças/adolescentes; pode acometer adultos jovens</li>
+        <li>Concordância gêmeos MZ: ~50%</li>
+        <li>Predisposição genética + gatilho ambiental → autoanticorpos → destruição células beta → ↓ insulina</li>
+      </ul>
+      <hr class="divider">
+      <div class="label">Anticorpos (DM1A)</div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:0.5rem">
+        <span class="tag tag-red">IAA</span>
+        <span class="tag tag-red">Anti-GAD65</span>
+        <span class="tag tag-red">Anti-IA-2 / IA-2B</span>
+        <span class="tag tag-red">Anti-ZnT8</span>
+      </div>
+      <p class="muted">DM1B: sem anticorpos detectáveis</p>
+      <hr class="divider">
+      <div class="callout callout-red" style="margin-top:0.25rem">Peptídeo C <strong>diminuído</strong> · Emergência: CAD</div>
+    </div>
+    <div class="card">
+      <div class="label" style="color:#854F0B">DM tipo 2</div>
+      <ul class="bullets">
+        <li>90–95% dos casos</li>
+        <li>Geralmente &gt; 40 anos; ~80% obesidade</li>
+        <li>Concordância gêmeos MZ: ~90%</li>
+        <li>Resistência periférica à insulina + secreção relativa insuficiente + ↑ prod. hepática de glicose</li>
+      </ul>
+      <hr class="divider">
+      <div class="label">Fatores de risco</div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:0.5rem">
+        <span class="tag tag-amber">Obesidade</span>
+        <span class="tag tag-amber">Hist. familiar</span>
+        <span class="tag tag-amber">HAS</span>
+        <span class="tag tag-amber">Dislipidemia</span>
+        <span class="tag tag-amber">DMG/macrossomia</span>
+        <span class="tag tag-amber">Tabagismo</span>
+        <span class="tag tag-amber">SOP</span>
+      </div>
+      <div class="callout callout-amber" style="margin-top:0.25rem">Peptídeo C <strong>normal/elevado</strong> · Emergência: EHH</div>
+    </div>
+  </div>
+  <div class="complement">
+    <div class="clabel">📌 Complementações</div>
+    <div class="cbody">
+      <strong>≥ 2 autoanticorpos persistentes:</strong> risco cumulativo quase 100% de progressão para DM1 ao longo da vida.<br>
+      <strong>CAD Euglicêmica (CAD-E):</strong> glicemia moderada (&lt; 250 mg/dL) + acidose metabólica + cetonemia. Comum em usuários de iSGLT2 e gestantes — suspeitar mesmo em DM2 com essas drogas.
+    </div>
+  </div>
+</div>
+
+<!-- 7. OUTROS TIPOS -->
+<div id="sec-outros" class="section section-content">
+  <div class="two-col" style="margin-bottom:0.75rem">
+    <div class="card">
+      <div class="label" style="color:#185FA5">LADA</div>
+      <ul class="bullets">
+        <li>3–12% dos casos</li>
+        <li>Evolução mais lenta que DM1</li>
+        <li>Idade &gt; 30 anos</li>
+        <li>Independência de insulina ≥ 6 meses após Dx</li>
+        <li>Anticorpos <strong>presentes</strong></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label" style="color:#3B6D11">MODY</div>
+      <ul class="bullets">
+        <li>Diabetes monogênico — mutação nas células beta</li>
+        <li>≥ 2 gerações consecutivas (hist. familiar forte)</li>
+        <li>Sem RI e sem anticorpos (ICA)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card" style="overflow-x:auto;margin-bottom:0.75rem">
+    <div class="label">MODY — subtipos principais</div>
+    <table>
+      <thead><tr><th>Tipo</th><th>Clínica</th><th>Complicações microvasculares</th><th>Tratamento</th></tr></thead>
+      <tbody>
+        <tr><td>MODY 2 (GCK)</td><td>Hiperglicemia leve e estável; assintomática</td><td>Raras</td><td>Dieta; insulina exceção</td></tr>
+        <tr><td>MODY 3 (HNF1α)</td><td>Defeito progressivo na secreção de insulina</td><td>Frequentes</td><td>Sulfonilureias (baixas doses); insulina longo prazo</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card" style="margin-bottom:0.75rem">
+    <div class="label">Diabetes secundário</div>
+    <div class="two-col">
+      <div>
+        <p class="muted" style="font-weight:500;margin-bottom:4px">Endocrinopatias</p>
+        <p class="muted">GH, cortisol, glucagon, catecolaminas, tiroxina — inibem insulina. Ex: acromegalia, Cushing, glucagonoma, feocromocitoma, hipertireoidismo, SOP</p>
+      </div>
+      <div>
+        <p class="muted" style="font-weight:500;margin-bottom:4px">Medicamentos</p>
+        <p class="muted">Glicocorticoides, ác. nicotínico, inibidores de protease, antipsicóticos atípicos. Tiazídicos e estatinas: controverso</p>
+      </div>
+    </div>
+    <hr class="divider">
+    <div class="two-col">
+      <div>
+        <p class="muted" style="font-weight:500;margin-bottom:4px">Infecções</p>
+        <p class="muted">Rubéola congênita, CMV, Coxsackie B, adenovírus, parotidite → destruição beta. Hepatite C: 1/3 dos crônicos têm DM (metformina + pioglitazona)</p>
+      </div>
+      <div>
+        <p class="muted" style="font-weight:500;margin-bottom:4px">Pâncreas exócrino</p>
+        <p class="muted">Pancreatite, trauma, neoplasia, fibrose cística, hemocromatose — pode se assemelhar ao DM1</p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="label" style="color:#A32D2D">DM pós-transplante</div>
+    <div class="two-col">
+      <div>
+        <ul class="bullets">
+          <li>Renal: ~5% em 1 ano</li>
+          <li>Hepático: ~18% em 1 ano</li>
+          <li><strong>Não usar HbA1c no 1º ano</strong> (subestima)</li>
+          <li>Critérios diagnósticos: os mesmos (após alta + desmame imunossupressor)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="label">Rastreamento pós-transplante</div>
+        <ul class="bullets">
+          <li>GJ e/ou TTGO 75g semanal no 1º mês</li>
+          <li>Depois: 3º, 6º e 12º mês</li>
+          <li>Após 1 ano: anual</li>
+        </ul>
+        <p class="muted" style="margin-top:0.5rem">Micofenolato e azatioprina: não associados ao DM pós-transplante</p>
+      </div>
+    </div>
+  </div>
+  <div class="complement">
+    <div class="clabel">📌 Complementações</div>
+    <div class="cbody">
+      <strong>HIV:</strong> inibidores de integrase e protease → forte RI → rastreio obrigatório.<br>
+      <strong>Comorbidades autoimunes no DM1 (rastreio obrigatório):</strong><br>
+      · Tireoidiana: TSH + anti-TPO no diagnóstico e a cada 1–2 anos<br>
+      · Doença celíaca: IgA anti-tTG no diagnóstico, aos 2 e 5 anos (ou se falha de crescimento/sintomas)
+    </div>
+  </div>
+</div>
+
+<!-- 8. EXAMES -->
+<div id="sec-exames" class="section section-content">
+  <div class="three-col" style="margin-bottom:0.75rem">
+    <div class="card">
+      <div class="label">HbA1c</div>
+      <ul class="bullets">
+        <li>Reflete últimos 2–3 meses</li>
+        <li>2 ocasiões <em>ou</em> + GJ alterada = diagnóstico</li>
+        <li><strong>↑ meia-vida hemácia</strong> → falsa elevação (álcool, def. ferro, DRC)</li>
+        <li><strong>↓ meia-vida hemácia</strong> → falsa diminuição (anemia hemolítica, hemoglobinopatias)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Frutosamina</div>
+      <ul class="bullets">
+        <li>Proteína (albumina) glicada</li>
+        <li>Reflete últimos <strong>7–14 dias</strong></li>
+        <li>Boa correlação com HbA1c</li>
+        <li>Útil quando HbA1c é pouco confiável (hemoglobinopatias, gravidez)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Peptídeo C</div>
+      <ul class="bullets">
+        <li>Reflete função pancreática residual</li>
+        <li>DM2 inicial: <strong>aumentado</strong> (compensação)</li>
+        <li>Falência (DM1 ou DM2 tardio): <strong>diminuído</strong></li>
+        <li>Separa "falta de insulina" de "resistência"</li>
+      </ul>
+    </div>
+  </div>
+  <div class="complement">
+    <div class="clabel">📌 Complementações — Métricas CGM</div>
+    <div class="cbody">
+      <strong>Time in Range (TIR) 70–180 mg/dL:</strong> &gt; 70%<br>
+      <strong>Tempo em hipoglicemia (&lt; 70 mg/dL):</strong> &lt; 4%<br>
+      <strong>Hipoglicemia grave (&lt; 54 mg/dL):</strong> &lt; 1%<br>
+      <strong>Coeficiente de Variação (CV):</strong> ≤ 36%
+    </div>
+  </div>
+</div>
+
+<!-- 9. METAS E THRESHOLDS -->
+<div id="sec-metas" class="section section-content">
+  <div class="card" style="margin-bottom:0.75rem;overflow-x:auto">
+    <div class="label">Metas por população</div>
+    <table>
+      <thead><tr><th>População</th><th>HbA1c alvo</th><th>Observação</th></tr></thead>
+      <tbody>
+        <tr><td>Adultos em geral</td><td>&lt; 7,0%</td><td>GJ/pré-prandial 80–130; pós-prandial 2h &lt; 180 mg/dL</td></tr>
+        <tr><td>Crianças/adolescentes (DM1)</td><td>&lt; 7,0%</td><td>Pode relaxar para &lt; 7,5% se risco de hipoglicemia</td></tr>
+        <tr><td>Idosos saudáveis</td><td>&lt; 7,5%</td><td>—</td></tr>
+        <tr><td>Idosos frágeis / múltiplas comorbidades</td><td>&lt; 8,0%</td><td>Foco em evitar hiper/hipoglicemia sintomática</td></tr>
+        <tr><td>Idosos muito comprometidos / fim de vida</td><td>Sem meta rígida</td><td>Apenas evitar hiperglicemia sintomática</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card" style="overflow-x:auto">
+    <div class="label">Critérios diagnósticos — tabela resumo</div>
+    <table>
+      <thead><tr><th>Exame</th><th>Normal</th><th>Pré-DM</th><th>DM</th></tr></thead>
+      <tbody>
+        <tr><td>GJ (mg/dL)</td><td>&lt; 100</td><td>100–125</td><td>≥ 126</td></tr>
+        <tr><td>HbA1c (%)</td><td>&lt; 5,7</td><td>5,7–6,4</td><td>≥ 6,5</td></tr>
+        <tr class="highlight-row"><td>TTGO-1h (mg/dL) ★</td><td>&lt; 155</td><td>155–208</td><td>≥ 209</td></tr>
+        <tr><td>TTGO-2h (mg/dL)</td><td>&lt; 140</td><td>140–199</td><td>≥ 200</td></tr>
+        <tr><td>Casual + sintomas (mg/dL)</td><td>—</td><td>—</td><td>≥ 200</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 10. ALGORITMO -->
+<div id="sec-algo" class="section section-content">
+  <div class="card">
+    <div class="step-row"><div class="step-num">1</div><div><strong class="body-text">Avaliação inicial — indicação de rastreio?</strong><ul class="bullets" style="margin-top:0.4rem"><li>≥ 35 anos</li><li>&lt; 35 anos + IMC ≥ 25 + ≥ 1 fator de risco</li><li>Criança ≥ 10 anos (pós-puberdade) + sobrepeso + fator de risco</li><li>FINDRISC alto/muito alto (&gt; 15)</li><li>Medicação de risco: glicocorticoide, inibidor de protease, antipsicótico atípico</li></ul></div></div>
+    <hr class="divider">
+    <div class="step-row"><div class="step-num">2</div><div><strong class="body-text">Estratificação — solicitar GJ + HbA1c</strong><ul class="bullets" style="margin-top:0.4rem"><li>Normais + baixo risco → encerrar investigação imediata</li><li>Pré-DM (valores intermediários) → solicitar <strong>TTGO-1h</strong></li><li>Faixa de DM (1 exame) → repetir para confirmar</li><li>Suspeita DM1 (jovem, cetose) → não atrasar tratamento; solicitar painel de autoanticorpos</li></ul></div></div>
+    <hr class="divider">
+    <div class="step-row"><div class="step-num">3</div><div><strong class="body-text">Seguimento</strong><ul class="bullets" style="margin-top:0.4rem"><li>Normal + baixo risco (FINDRISC &lt; 15 e &lt; 3 fatores): repetir em <strong>3 anos</strong></li><li>Normal + alto risco (FINDRISC ≥ 15 ou ≥ 3 fatores): repetir em <strong>12 meses</strong></li><li>Pré-DM confirmado: repetir <strong>anualmente</strong></li><li>1 exame alterado (DM iminente): repetir em <strong>6 meses</strong></li></ul></div></div>
+  </div>
+</div>
+
+<!-- 11. ERROS E PEGADINHAS -->
+<div id="sec-erros" class="section section-content">
+  <div class="card">
+    <div class="callout callout-red" style="margin-bottom:0.75rem">
+      <strong>Nunca</strong> exigir jejum ou repetição em paciente com sintomas cardinais clássicos + glicemia &gt; 200 mg/dL.
+    </div>
+    <ul class="bullets">
+      <li><strong>Erro frequente:</strong> solicitar TTGO para pacientes com GJ e HbA1c inequivocamente normais e baixo risco. TTGO é reservado para pré-DM ou alto risco.</li>
+      <li><strong>HbA1c contraindicada como critério diagnóstico em:</strong> 1º ano pós-transplante, gestantes, DRC avançada, anemias hemolíticas, hemoglobinopatias.</li>
+      <li><strong>Metas não são universais:</strong> erro grave mirar HbA1c &lt; 7% em idosos frágeis. Nesses casos: alvo &lt; 8% ou foco apenas em evitar sintomas.</li>
+      <li><strong>CAD euglicêmica:</strong> suspeitar em usuários de iSGLT2 mesmo com glicemia &lt; 250 mg/dL.</li>
+      <li><strong>Pós-transplante:</strong> usar GJ e/ou TTGO — não HbA1c no 1º ano.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 12. REVISÃO 30s -->
+<div id="sec-revisao" class="section section-content">
+  <div class="callout callout-blue" style="margin-bottom:0.75rem">
+    <strong>Critérios DM:</strong> GJ ≥ 126 · HbA1c ≥ 6,5% · TTGO-1h ≥ 209 · TTGO-2h ≥ 200 · Casual ≥ 200 + sintomas
+  </div>
+  <div class="callout callout-amber" style="margin-bottom:0.75rem">
+    <strong>Pré-DM:</strong> GJ 100–125 · HbA1c 5,7–6,4% · TTGO-1h 155–208 → solicitar TTGO se risco alto
+  </div>
+  <div class="card">
+    <ul class="checklist">
+      <li>Estadiamento DM1: Estágio 1 (≥ 2 Acs, normoglicemia) · Estágio 2 (≥ 2 Acs + disglicemia) · Estágio 3 (clínico)</li>
+      <li>DM1: jovem + peso normal + peptídeo C baixo + anticorpos + CAD</li>
+      <li>DM2: obesidade + RI + peptídeo C normal/alto + EHH</li>
+      <li>LADA: adulto + anticorpos + progressão lenta para insulina</li>
+      <li>MODY: jovem + multigeracional + sem RI + sem anticorpos</li>
+      <li>Meta geral: HbA1c &lt; 7% + TIR &gt; 70% na monitorização contínua</li>
+      <li>Rastreamento ≥ 35 anos ou IMC + fator de risco</li>
+      <li>DM1: rastrear TSH/anti-TPO e anti-tTG IgA periodicamente</li>
+      <li>Não usar HbA1c no 1º ano pós-transplante</li>
+      <li>CAD euglicêmica: suspeitar em iSGLT2 mesmo sem hiperglicemia franca</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+<script>
+function showSection(id){
+  document.querySelectorAll('.section-content').forEach(s=>s.classList.remove('open'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('open');
+  var map={visao:0,classif:1,clinico:2,rastreio:3,diag:4,fisio:5,outros:6,exames:7,metas:8,algo:9,erros:10,revisao:11};
+  document.querySelectorAll('.nav-btn')[map[id]].classList.add('active');
+}
+</script>
+</body>
+</html>
