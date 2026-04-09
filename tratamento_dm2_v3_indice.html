@@ -1,0 +1,2234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Endocrinologia — Problema 3 | Ficha Médica Completa</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+:root{
+  --bg:#ffffff;--surface:#f9fafb;--border:#e5e7eb;--text:#111827;--text2:#6b7280;
+  --red:#dc2626;--red-bg:#fef2f2;--red-b:#fecaca;
+  --amber:#d97706;--amber-bg:#fffbeb;--amber-b:#fde68a;
+  --green:#16a34a;--green-bg:#f0fdf4;--green-b:#bbf7d0;
+  --blue:#2563eb;--blue-bg:#eff6ff;--blue-b:#bfdbfe;
+  --purple:#7c3aed;--purple-bg:#f5f3ff;--purple-b:#ddd6fe;
+  --gray:#374151;--gray-bg:#f3f4f6;--gray-b:#d1d5db;
+  --teal:#0d9488;--teal-bg:#f0fdfa;--teal-b:#99f6e4;
+  --font:'IBM Plex Sans',sans-serif;--mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14px;line-height:1.65}
+/* HEADER */
+.hdr{background:var(--bg);border-bottom:2px solid var(--border);padding:18px 24px 0;position:sticky;top:0;z-index:100}
+.hdr-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;gap:10px;flex-wrap:wrap}
+.hdr h1{font-size:17px;font-weight:700;letter-spacing:-.3px}
+.hdr p{font-size:11.5px;color:var(--text2);margin-top:2px}
+.brow{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+/* TABS */
+.tabs{display:flex;gap:1px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:8px 13px;border:none;background:transparent;font-family:var(--font);font-size:12px;font-weight:500;color:var(--text2);cursor:pointer;border-bottom:2.5px solid transparent;white-space:nowrap;transition:all .15s;border-radius:4px 4px 0 0}
+.tab:hover{color:var(--text);background:var(--surface)}
+.tab.on{color:var(--blue);border-bottom-color:var(--blue);background:var(--blue-bg)}
+/* CONTENT */
+.wrap{padding:22px 24px;max-width:1000px;margin:0 auto}
+.panel{display:block}
+/* CARDS */
+.card{background:var(--bg);border:.5px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.card-h{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text2);margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid var(--border)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:700px){.g2,.g3,.g4{grid-template-columns:1fr}}
+@media(max-width:900px){.g4{grid-template-columns:1fr 1fr}}
+/* TAGS */
+.tag{display:inline-flex;align-items:center;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:.2px;gap:3px}
+.tr{background:var(--red-bg);color:var(--red);border:1px solid var(--red-b)}
+.ta{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-b)}
+.tg{background:var(--green-bg);color:var(--green);border:1px solid var(--green-b)}
+.tb{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-b)}
+.tp{background:var(--purple-bg);color:var(--purple);border:1px solid var(--purple-b)}
+.tz{background:var(--gray-bg);color:var(--gray);border:1px solid var(--gray-b)}
+.tt{background:var(--teal-bg);color:var(--teal);border:1px solid var(--teal-b)}
+/* CALLOUTS */
+.co{border-radius:8px;padding:12px 15px;margin-bottom:12px;border-left:4px solid;font-size:13.5px}
+.co-r{background:var(--red-bg);border-color:var(--red)}
+.co-a{background:var(--amber-bg);border-color:var(--amber)}
+.co-g{background:var(--green-bg);border-color:var(--green)}
+.co-b{background:var(--blue-bg);border-color:var(--blue)}
+.co-p{background:var(--purple-bg);border-color:var(--purple)}
+.co-t{background:var(--teal-bg);border-color:var(--teal)}
+.co-lbl{font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:5px}
+.co-r .co-lbl{color:var(--red)}.co-a .co-lbl{color:var(--amber)}.co-g .co-lbl{color:var(--green)}.co-b .co-lbl{color:var(--blue)}.co-p .co-lbl{color:var(--purple)}.co-t .co-lbl{color:var(--teal)}
+/* DIRECTIVE */
+.dir{background:var(--purple-bg);border:1px solid var(--purple-b);border-left:4px solid var(--purple);border-radius:8px;padding:13px 15px;margin-top:10px;margin-bottom:4px}
+.dir-lbl{font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--purple);margin-bottom:7px}
+.dir-item{margin-bottom:9px;padding-bottom:9px;border-bottom:1px solid var(--purple-b)}
+.dir-item:last-child{margin:0;padding:0;border:none}
+.dir-t{font-size:12.5px;font-weight:700;color:var(--purple);margin-bottom:2px}
+.dir-item p{font-size:12.5px;color:#4c1d95}
+/* TABLES */
+.tw{overflow-x:auto;border-radius:8px;border:1px solid var(--border);margin-bottom:14px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+thead th{background:var(--gray-bg);padding:9px 11px;text-align:left;font-size:10.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text2);border-bottom:1px solid var(--border)}
+tbody td{padding:9px 11px;border-bottom:1px solid var(--border);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--surface)}
+tr.hl-b td{background:var(--blue-bg)}
+tr.hl-b td:first-child{border-left:3px solid var(--blue)}
+tr.hl-r td{background:var(--red-bg)}
+tr.hl-r td:first-child{border-left:3px solid var(--red)}
+tr.hl-g td{background:var(--green-bg)}
+tr.hl-g td:first-child{border-left:3px solid var(--green)}
+tr.hl-a td{background:var(--amber-bg)}
+tr.hl-a td:first-child{border-left:3px solid var(--amber)}
+tr.hl-p td{background:var(--purple-bg)}
+tr.hl-p td:first-child{border-left:3px solid var(--purple)}
+/* METRICS */
+.mg{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:14px}
+.mc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center}
+.mv{font-size:19px;font-weight:700;font-family:var(--mono);color:var(--blue);line-height:1.2;margin-bottom:3px}
+.ml{font-size:10.5px;color:var(--text2);font-weight:500;line-height:1.3}
+/* DRUG CARD */
+.dc{background:var(--bg);border:.5px solid var(--border);border-radius:12px;margin-bottom:16px;overflow:hidden}
+.dc-hd{padding:11px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px;border-bottom:1px solid var(--border);background:var(--surface)}
+.dc-nm{font-size:14.5px;font-weight:700;letter-spacing:-.2px}
+.dc-bd{padding:14px 16px}
+.ds-t{font-size:10.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--text2);margin-bottom:5px;margin-top:9px}
+/* INSULIN CARDS */
+.ic{background:var(--bg);border:.5px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+.ic-hd{padding:10px 15px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px}
+.ic-nm{font-size:14px;font-weight:700}
+.ic-bd{padding:13px 15px}
+.pk{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:9px 0}
+@media(max-width:500px){.pk{grid-template-columns:1fr 1fr}}
+.pk-i{background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:8px;text-align:center}
+.pk-v{font-size:13px;font-weight:700;font-family:var(--mono);color:var(--blue)}
+.pk-l{font-size:10px;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+/* LISTS */
+ul.pl{list-style:none;padding:0}
+ul.pl li{padding:2px 0 2px 13px;position:relative;font-size:13px}
+ul.pl li::before{content:"·";position:absolute;left:2px;color:var(--text2);font-weight:700}
+ul.pl li.sub{padding-left:24px}
+ul.pl li.sub::before{left:13px}
+ul.ck{list-style:none;padding:0}
+ul.ck li{padding:6px 0 6px 25px;position:relative;font-size:13.5px;border-bottom:1px solid var(--border)}
+ul.ck li:last-child{border-bottom:none}
+ul.ck li::before{content:"☐";position:absolute;left:0;color:var(--text2);font-size:14px}
+/* STEPS */
+.sl{list-style:none;padding:0}
+.si{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start}
+.sn{min-width:26px;height:26px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px}
+.sc strong{display:block;font-size:13px;font-weight:700;margin-bottom:3px}
+.sc p,.sc ul{font-size:12.5px}
+/* FLOW */
+.fb{border:1.5px solid var(--border);border-radius:9px;padding:11px 15px;margin-bottom:5px;font-size:13px}
+.fb.dec{border-color:var(--amber-b);background:var(--amber-bg);font-weight:600}
+.fb.act{border-color:var(--blue-b);background:var(--blue-bg)}
+.fb.warn{border-color:var(--red-b);background:var(--red-bg)}
+.fb.good{border-color:var(--green-b);background:var(--green-bg)}
+.fb.purp{border-color:var(--purple-b);background:var(--purple-bg)}
+.fa{text-align:center;color:var(--text2);font-size:17px;margin:2px 0;line-height:1}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:7px 0}
+@media(max-width:540px){.fg{grid-template-columns:1fr}}
+/* SECTION LABEL */
+.sl-lbl{font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text2);margin:18px 0 9px;display:flex;align-items:center;gap:7px}
+.sl-lbl::after{content:"";flex:1;height:1px;background:var(--border)}
+p{font-size:13.5px;margin-bottom:7px}
+strong{font-weight:700}
+hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+small{font-size:11px;color:var(--text2)}
+/* REC BADGE */
+.rb{display:inline-flex;gap:5px;align-items:center;margin-left:6px}
+.rc{padding:1px 7px;border-radius:4px;font-size:10px;font-weight:700;color:#fff}
+.rc-i{background:#2563eb}.rc-iia{background:#d97706}.rc-iib{background:#9ca3af}
+.rn{padding:1px 7px;border-radius:4px;font-size:10px;font-weight:700;background:#111827;color:#fff}
+
+
+/* ===== TOC STYLES ===== */
+.top-hdr {
+  background:var(--bg);
+  border-bottom:2px solid var(--border);
+  padding:14px 24px 0;
+  position:sticky;
+  top:0;
+  z-index:200;
+  box-shadow:0 2px 8px rgba(0,0,0,.07);
+}
+.top-hdr-info {
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  margin-bottom:10px;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.top-hdr h1 {font-size:16px;font-weight:700;letter-spacing:-.3px}
+.top-hdr p {font-size:11px;color:var(--text2);margin-top:2px}
+
+.toc-bar {
+  display:flex;
+  gap:2px;
+  overflow-x:auto;
+  scrollbar-width:thin;
+  scrollbar-color: var(--border) transparent;
+  padding-bottom:1px;
+}
+.toc-bar::-webkit-scrollbar {height:3px}
+.toc-bar::-webkit-scrollbar-track {background:transparent}
+.toc-bar::-webkit-scrollbar-thumb {background:var(--border);border-radius:3px}
+
+.toc-item {
+  display:inline-flex;
+  align-items:center;
+  padding:7px 12px;
+  border-radius:6px 6px 0 0;
+  font-family:var(--font);
+  font-size:11.5px;
+  font-weight:500;
+  color:var(--text2);
+  text-decoration:none;
+  white-space:nowrap;
+  border-bottom:2.5px solid transparent;
+  transition:all .15s;
+  gap:5px;
+}
+.toc-item:hover {
+  color:var(--text);
+  background:var(--surface);
+}
+.toc-item.active {
+  color:var(--blue);
+  border-bottom-color:var(--blue);
+  background:var(--blue-bg);
+  font-weight:600;
+}
+
+/* ===== SECTION HEADER ===== */
+.section-header {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:18px 0 12px;
+  margin-bottom:6px;
+  border-bottom:2px solid var(--border);
+  scroll-margin-top:90px;
+}
+.section-icon {font-size:20px;line-height:1}
+.section-title {
+  font-size:17px;
+  font-weight:700;
+  letter-spacing:-.3px;
+  color:var(--text);
+}
+
+/* ===== PANEL DIVIDERS ===== */
+.panel {
+  padding-bottom:32px;
+  border-bottom:1px dashed var(--border);
+  margin-bottom:8px;
+}
+.panel:last-child {border-bottom:none}
+
+/* Back to top button */
+.back-top {
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  width:40px;
+  height:40px;
+  background:var(--blue);
+  color:#fff;
+  border:none;
+  border-radius:50%;
+  font-size:18px;
+  cursor:pointer;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 3px 10px rgba(37,99,235,.35);
+  z-index:300;
+  transition:opacity .2s;
+}
+.back-top.show {display:flex}
+.back-top:hover {background:#1d4ed8}
+</style>
+</head>
+<body>
+
+<!-- STICKY TOP HEADER + TOC -->
+<div class="top-hdr">
+  <div class="top-hdr-info">
+    <div>
+      <h1>Endocrinologia — Problema 3 · Tratamento DM2 &amp; Insulinoterapia</h1>
+      <p>Clínica Médica · Residência Médica · Baseado em SBD 2023/2025, SBEM 2023, ADA 2025</p>
+    </div>
+    <div class="brow">
+      <span class="tag tb">SBD 2025</span><span class="tag tb">SBEM 2023</span><span class="tag tp">Atualizado</span><span class="tag tr">Alto Rendimento</span>
+    </div>
+  </div>
+  <nav class="toc-bar" id="toc">
+<a href="#mev" class="toc-item" data-target="mev">🥗 Trat. Não Farmacológico</a>
+<a href="#metas" class="toc-item" data-target="metas">🎯 Metas Terapêuticas</a>
+<a href="#complic" class="toc-item" data-target="complic">🫀 Complicações Crônicas</a>
+<a href="#classes" class="toc-item" data-target="classes">💊 Classes Farmacológicas</a>
+<a href="#sequencia" class="toc-item" data-target="sequencia">📋 Sequência de Tratamento</a>
+<a href="#insulina" class="toc-item" data-target="insulina">💉 Insulinoterapia</a>
+<a href="#algoritmo" class="toc-item" data-target="algoritmo">🔍 Algoritmo Prático</a>
+<a href="#erros" class="toc-item" data-target="erros">⚠️ Erros e Pegadinhas</a>
+<a href="#revisao" class="toc-item" data-target="revisao">📝 Revisão Rápida</a>
+  </nav>
+</div>
+
+<div class="wrap">
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TAB 1 — TRATAMENTO NÃO FARMACOLÓGICO
+═══════════════════════════════════════════════════════════ -->
+<div id="mev" class="panel">
+  <div class="section-header">
+    <span class="section-icon">🥗</span>
+    <h2 class="section-title">Trat. Não Farmacológico</h2>
+  </div>
+
+  <div class="sl-lbl">1.1 Terapia Nutricional</div>
+
+  <div class="card">
+    <div class="card-h">A) Recomendações — Pré-DM</div>
+    <div class="g3">
+      <div>
+        <div class="ds-t">Rec. 1 — Restrição Calórica</div>
+        <p>Em pessoas com pré-DM e sobrepeso/obesidade, <strong>restrição calórica + atividade física</strong> é RECOMENDADO para perda de peso e redução do risco de DM2.</p>
+      </div>
+      <div>
+        <div class="ds-t">Rec. 2 — Fibras</div>
+        <p>Consumo de fibras <strong>25–30 g/dia</strong> em pessoas com pré-DM é RECOMENDADO por estar associado a menor risco de DM2.</p>
+      </div>
+      <div>
+        <div class="ds-t">Rec. 3 — Refrigerantes</div>
+        <p>Redução do consumo de bebidas com açúcares naturais ou adicionados é RECOMENDADA por associação com maior risco de DM2.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h">B) Recomendações — DM2 Diagnosticada</div>
+    <div class="g2">
+      <div>
+        <div class="ds-t">Rec. 1 — Redução de Peso</div>
+        <p>Em DM2 com sobrepeso/obesidade, perder <strong>no mínimo 5%</strong> do peso corporal é RECOMENDADO para melhora do controle glicêmico.</p>
+        <div class="ds-t">Rec. 2 — Alimentação Geral</div>
+        <p>Dieta balanceada com <strong>restrição de carboidratos simples e refinados</strong> de rápida absorção. Diversas abordagens nutricionais são capazes de melhorar o controle glicêmico.</p>
+        <div class="ds-t">Rec. 3 — Proteínas</div>
+        <p>Em DM2 com <strong>função renal preservada</strong>: consumo de <strong>15–20% do VET</strong>, podendo variar de 1–1,5 g/kg/dia. Importante para evitar sarcopenia.</p>
+        <div class="ds-t">Rec. 4 — Gorduras</div>
+        <p>Gorduras totais: <strong>20–35%</strong> das calorias diárias. Priorizar ácidos graxos <strong>mono e poliinsaturados</strong> em detrimento de saturados (menor incidência de DCV).</p>
+      </div>
+      <div>
+        <div class="ds-t">Rec. 5 — Fibras</div>
+        <p>Em adultos com DM2: <strong>14 g/1.000 kcal</strong>, mínimo de <strong>25 g/dia</strong>. Melhora controle glicêmico e atenua hiperglicemia pós-prandial.</p>
+        <div class="ds-t">Rec. 6 — Carboidratos (Low Carb)</div>
+        <p>Redução de carboidratos totais <strong>PODE SER CONSIDERADA</strong> em adultos não-gestantes com DM2 para melhora do controle glicêmico. Ainda polêmico.</p>
+        <div class="ds-t">Outras Recomendações</div>
+        <ul class="pl">
+          <li>Acompanhamento com nutricionista e psicólogo</li>
+          <li>Utilização de suplementos quando indicados</li>
+          <li>Monitorização: glicemia capilar (lista)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl-lbl">1.2 Atividade Física no DM2</div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-h">A) Estratificação de Risco CV Antes do Exercício</div>
+      <p style="font-size:12.5px">A decisão de rastrear o indivíduo com DM2 assintomático para DCV antes de iniciar programa de exercícios dependerá de:</p>
+      <ul class="pl" style="margin-top:6px">
+        <li>Presença de estratificadores de risco CV alto/muito alto</li>
+        <li>Sintomas típicos ou atípicos de DCV</li>
+        <li>Intensidade do exercício pretendido (alta intensidade)</li>
+      </ul>
+      <div class="co co-b" style="margin-top:10px">
+        <div class="co-lbl">ℹ️ Rastreio</div>
+        <p><strong>Não realizado de forma rotineira.</strong> Só rastrear se resposta SIM para ≥1 das 3 perguntas acima.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h">B + C) Exercícios Recomendados</div>
+      <div class="ds-t">Pré-Diabéticos</div>
+      <ul class="pl">
+        <li><strong>150 minutos</strong> de aeróbica moderada/semana</li>
+      </ul>
+      <div class="ds-t" style="margin-top:8px">DM2 — Combinação Obrigatória</div>
+      <ul class="pl">
+        <li><span class="tag tb">Aeróbico</span> 150 min/semana — caminhada, corrida, natação, bicicleta</li>
+        <li><span class="tag tg">Resistido</span> 2–3 vezes/semana — musculação, elásticos, peso corporal</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TAB 2 — METAS TERAPÊUTICAS
+═══════════════════════════════════════════════════════════ -->
+<div id="metas" class="panel">
+  <div class="section-header">
+    <span class="section-icon">🎯</span>
+    <h2 class="section-title">Metas Terapêuticas</h2>
+  </div>
+
+  <div class="sl-lbl">2.1 Metas de Controle Glicêmico — SBEM 2023</div>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th></th><th>DM1 ou DM2 Geral</th><th>Idoso Saudável</th><th>Idoso Comprometido (Frágil)</th><th>Idoso Muito Comprometido</th><th>Criança/Adolescente</th></tr>
+      </thead>
+      <tbody>
+        <tr class="hl-b"><td><strong>HbA1c %</strong></td><td><strong>&lt;7,0</strong></td><td>&lt;7,5</td><td>&lt;8,0</td><td>Evitar sintomas de hiper ou hipoglicemia</td><td>&lt;7,0</td></tr>
+        <tr><td><strong>Glicemia Jejum / Pré-Prandial</strong></td><td>80–130</td><td>80–130</td><td>90–150</td><td>100–180</td><td>70–130</td></tr>
+        <tr><td><strong>Glicemia 2h Pós-Prandial</strong></td><td>&lt;180</td><td>&lt;180</td><td>&lt;180</td><td>—</td><td>&lt;180</td></tr>
+        <tr><td><strong>Glicemia ao Deitar</strong></td><td>90–150</td><td>90–150</td><td>100–180</td><td>110–200</td><td>90–150</td></tr>
+        <tr><td><strong>TIR 70–180 mg/dL</strong></td><td>&gt;70%</td><td>&gt;70%</td><td>&gt;50%</td><td>—</td><td>&gt;70%</td></tr>
+        <tr><td><strong>T Hipog &lt;70 mg/dL</strong></td><td>&lt;4%</td><td>&lt;4%</td><td>&lt;1%</td><td>0</td><td>&lt;4%</td></tr>
+        <tr><td><strong>T Hipog &lt;54 mg/dL</strong></td><td>&lt;1%</td><td>&lt;1%</td><td>0</td><td>0</td><td>&lt;1%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="co co-a">
+    <div class="co-lbl">🎯 Resumo prático (LIBRE)</div>
+    <p><strong>Jejum ≤ 130 · 2h pós-refeição ≤ 180 · EVITAR SEMPRE A HIPOGLICEMIA</strong> (maior risco de complicações). Nível 1 CGM: 54&lt;x&lt;70 → &lt;4%; Nível 2: &lt;54 → &lt;1%.</p>
+  </div>
+
+  <div class="sl-lbl">Estratificação do Idoso — SBEM 2023</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Saudável</th><th>Comprometido</th><th>Muito Comprometido</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Poucas comorbidades crônicas<br>Estado funcional preservado<br>Estado cognitivo preservado</td>
+          <td>Múltiplas comorbidades crônicas*<br>Comprometimento funcional leve a moderado<br>Comprometimento cognitivo moderado</td>
+          <td>Doença terminal**<br>Comprometimento funcional grave<br>Comprometimento cognitivo grave</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:12px;color:var(--text2)">*Comorbidades crônicas: Câncer, AR, ICC, Depressão grave, Enfisema, Parkinson, IAM, AVC, DRC III ou pior, Metastático, DPOC. **Se o paciente já não vai viver muito, ser mais tolerante com as metas para não gerar hiperosmolaridade.</p>
+
+  <div class="sl-lbl">Metas Especiais na DM1</div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-h">Metas Mais Reduzidas — HbA1c &lt;6,5%</div>
+      <p><em>Pode ser considerada quando:</em></p>
+      <ul class="pl">
+        <li>Não aumenta o risco de hipoglicemia — <strong>PRINCIPAL</strong></li>
+        <li>Não piora a qualidade de vida</li>
+        <li>Não traz sobrecarga exagerada no cuidado</li>
+        <li>Durante a fase de remissão (Lua de Mel)</li>
+        <li>Pacientes jovens com muitos anos de doença à frente</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-h">Metas Mais Elevadas — HbA1c 7–7,5%</div>
+      <p><em>Crianças/adolescentes com DM1 quando:</em></p>
+      <ul class="pl">
+        <li>Hipoglicemia assintomática ou incapacidade de percebê-la</li>
+        <li>Histórico de hipoglicemia grave</li>
+        <li>Falta de acesso a análogos de insulina</li>
+        <li>Falta de acesso a sistemas avançados de liberação</li>
+        <li>Impossibilidade de monitorização regular/contínua</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h">Alvos Glicêmicos Menos Rígidos — Qualquer Paciente</div>
+    <div class="g2">
+      <ul class="pl">
+        <li>Menor expectativa de vida</li>
+        <li>Comorbidades limitantes (neoplasia avançada, DCV, DRC)</li>
+      </ul>
+      <ul class="pl">
+        <li>Risco de hipoglicemia grave ou não percebida</li>
+        <li>Função cognitiva comprometida</li>
+        <li>Capacidade funcional comprometida</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sl-lbl">2.2 Dislipidemia no Diabetes</div>
+
+  <div class="co co-b">
+    <div class="co-lbl">Contexto</div>
+    <p>DM2 aumenta incidência de DCV em <strong>2×</strong>, AVC em até <strong>4×</strong>, e mortalidade em <strong>1,5–3,6×</strong>. O tratamento da dislipidemia visa tanto a redução de eventos CV quanto a prevenção de pancreatite aguda quando pertinente.</p>
+  </div>
+
+  <div class="sl-lbl">Estratificação de Risco CV</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Categoria</th><th>Critério</th><th>Taxa Anual de Eventos CV</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag tg">Baixo</span></td><td>Homens &lt;38a / Mulheres &lt;46a — apenas pela idade</td><td>1–2%</td></tr>
+        <tr><td><span class="tag ta">Intermediário</span></td><td>Homens 38–49a / Mulheres 46–56a — apenas pela idade</td><td>1–2%</td></tr>
+        <tr><td><span class="tag tr">Alto</span></td><td>ATÉ dois estratificadores de alto risco (independente da idade) <em>OU</em> Homens ≥50a / Mulheres ≥56a sem estratificadores</td><td>2–3%</td></tr>
+        <tr class="hl-r"><td><span class="tag tr">Muito Alto</span></td><td>DM1 ou DM2 INDEPENDENTE DA IDADE com estratificadores de muito alto risco (EMAR-1 ou EMAR-2)</td><td>&gt;3%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-h">Estratificadores de Alto Risco (EAR)</div>
+      <ul class="pl">
+        <li>DM2 há mais de 10 anos</li>
+        <li>História familiar de DAC prematura (eventos coronários: pai/mãe/irmãos &lt;55a homens / &lt;65a mulheres)</li>
+        <li>Síndrome metabólica (CA ≥94 cm homens / ≥80 cm mulheres + 2 critérios)</li>
+        <li>Hipertensão arterial tratada ou não</li>
+        <li>Tabagismo ativo (até 1 ano antes da estratificação)</li>
+        <li>Neuropatia autonômica cardiovascular incipiente (1 TAC alterado)</li>
+        <li>Retinopatia diabética não proliferativa leve</li>
+        <li>Doença renal estratificada como alto risco</li>
+        <li>DASC: escore de cálcio &gt;10, placa carótida &gt;1,5 mm, AngioTC com placa, ITB &lt;0,9, aneurisma aorta abdominal</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-h">Estratificadores de Muito Alto Risco (EMAR)</div>
+      <p><strong>EMAR-1 (Prevenção Primária):</strong></p>
+      <ul class="pl">
+        <li>3 ou mais EAR</li>
+        <li>DM1 com duração &gt;20 anos e início após os 18 anos</li>
+        <li>Estenose &gt;50% em qualquer território vascular</li>
+        <li>EMAR renal</li>
+        <li>Hipercolesterolemia grave: CT &gt;310 ou LDL &gt;190 mg/dL</li>
+        <li>Neuropatia autonômica instalada (2 TAC alterados)</li>
+        <li>Retinopatia NP moderada-severa, severa, proliferativa, ou com evidência de progressão</li>
+      </ul>
+      <p style="margin-top:8px"><strong>EMAR-2 (Prevenção Secundária):</strong></p>
+      <ul class="pl">
+        <li>SCA: IAM agudo ou angina instável</li>
+        <li>IAM antigo ou angina estável</li>
+        <li>AVC aterotrombótico ou AIT</li>
+        <li>Revascularização coronariana, carotídea, renal ou periférica</li>
+        <li>Insuficiência vascular periférica ou amputação de membros</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sl-lbl">Metas e Tratamento da Dislipidemia</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Categoria de Risco</th><th>Uso de Estatina</th><th>Meta LDL-c (mg/dL)</th><th>Meta Colesterol não-HDL</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag tg">Baixo</span></td><td>Opcional</td><td>&lt;100</td><td>&lt;130</td></tr>
+        <tr><td><span class="tag ta">Intermediário</span></td><td>Qualquer estatina (RECOMENDADO iniciar independente do nível de colesterol)</td><td>&lt;100</td><td>&lt;130</td></tr>
+        <tr><td><span class="tag tr">Alto</span></td><td>Qualquer estatina de alta potência</td><td><strong>&lt;70</strong></td><td>&lt;100</td></tr>
+        <tr class="hl-r"><td><span class="tag tr">Muito Alto</span></td><td>Alta potência (RECOMENDADO independente do LDL inicial)</td><td><strong>&lt;50</strong></td><td>&lt;80</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="co co-a">
+    <div class="co-lbl">⚠️ Importante — TG &gt;200 mg/dL</div>
+    <p>Usar <strong>Colesterol não-HDL como meta</strong> (em vez do LDL calculado), pois o LDL calculado subestima os valores reais quando os triglicérides estão elevados.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-h">Potência das Estatinas e Combinações</div>
+    <div class="g2">
+      <div>
+        <div class="ds-t">Estatinas por Potência</div>
+        <ul class="pl">
+          <li><strong>Média potência:</strong> Sinvastatina 20–40mg, Lovastatina 40mg, Pravastatina 40–80mg, Fluvastatina 80mg, Atorvastatina 10–20mg, Rosuvastatina 5–10mg, Pitavastatina 2–4mg</li>
+          <li><strong>Alta potência:</strong> Atorvastatina 40–80mg, Rosuvastatina 20–40mg</li>
+        </ul>
+      </div>
+      <div>
+        <div class="ds-t">Redução Média do LDL-c por Tratamento</div>
+        <ul class="pl">
+          <li>Estatina moderada: <strong>30–50%</strong></li>
+          <li>Estatina alta: <strong>50%</strong></li>
+          <li>Estatina alta + Ezetimiba: <strong>65%</strong></li>
+          <li>Inibidor de PCSK9: <strong>60%</strong></li>
+          <li>PCSK9 + Estatina alta: <strong>75%</strong></li>
+          <li>PCSK9 + Estatina alta + Ezetimiba: <strong>85%</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h">Recomendações Específicas (E.2)</div>
+    <ul class="pl">
+      <li><strong>Muito Alto Risco:</strong> Estatina alta potência independente do LDL inicial → meta LDL &lt;50 ou não-HDL &lt;80. Se não atingir com estatina máxima → <strong>adicionar Ezetimiba</strong>. Se ainda não atingir → <strong>considerar iPCSK9</strong> (anticorpo monoclonal, custo-benefício).</li>
+      <li><strong>Alto Risco:</strong> Estatina máxima tolerada não atingiu LDL &lt;70 → <strong>associar outro hipolipemiante</strong>.</li>
+      <li><strong>Intermediário:</strong> Iniciar estatina independente do nível de colesterol inicial.</li>
+      <li><strong>HF confirmada (LDL &gt;190):</strong> Considerar MUITO ALTO RISCO mesmo em prevenção primária → estatina alta potência.</li>
+      <li><strong>DRC em diálise sem DAC clínica:</strong> <span class="tag tr">NÃO INICIAR</span> estatina. Mas manter se já usava antes da diálise.</li>
+      <li><strong>ICC NYHA II–IV com LDL &lt;130:</strong> <span class="tag tr">NÃO INICIAR</span> estatina. Manter se já usava.</li>
+      <li><strong>TG &gt;880 mg/dL:</strong> Fibratos + restrição de gorduras/CHO para <strong>prevenção de pancreatite aguda</strong>.</li>
+    </ul>
+  </div>
+
+  <div class="sl-lbl">2.3 Hipertensão Arterial no Diabetes</div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-h">Classificação da PA</div>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Classificação</th><th>PAS (mmHg)</th><th>PAD (mmHg)</th></tr></thead>
+          <tbody>
+            <tr class="hl-g"><td>Ótima</td><td>&lt;120</td><td>&lt;80</td></tr>
+            <tr><td>Normal</td><td>120–129</td><td>80–84</td></tr>
+            <tr class="hl-a"><td>Pré-Hipertensão</td><td>130–139</td><td>85–89</td></tr>
+            <tr class="hl-r"><td>Estágio I</td><td>140–159</td><td>90–99</td></tr>
+            <tr class="hl-r"><td>Estágio II</td><td>160–179</td><td>100–109</td></tr>
+            <tr class="hl-r"><td>Estágio III</td><td>≥180</td><td>≥110</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h">Metas de PA por Perfil</div>
+      <div class="tw">
+        <table>
+          <thead><tr><th>População</th><th>Meta PAS/PAD</th><th>Iniciar Farm.</th><th>Observação</th></tr></thead>
+          <tbody>
+            <tr class="hl-b"><td><strong>DM sem DAC</strong></td><td>&lt;130/&lt;80</td><td>≥140/≥90 → mono; ≥160/≥100 → dupla</td><td>Iniciar monoterapia</td></tr>
+            <tr><td><strong>DM com DAC</strong></td><td>&lt;130/&lt;80</td><td>≥140/≥90</td><td>Evitar reduzir PAD abaixo de 120/70</td></tr>
+            <tr><td><strong>DM com Albuminúria</strong></td><td>&lt;130/&lt;80</td><td>≥130/≥80</td><td><strong>IECA/BRA preferidos</strong> (máx. dose tolerada)</td></tr>
+            <tr class="hl-a"><td><strong>DM + HAS Estágio III</strong></td><td>&lt;140/&lt;90</td><td>Terapia dupla</td><td>Redução gradual da PA</td></tr>
+            <tr><td>Idoso saudável &gt;80a</td><td>130–139/70–79</td><td>≥140/≥90</td><td>Usar medidas de consultório</td></tr>
+            <tr><td>Idoso frágil</td><td>140–149/70–79</td><td>≥160/≥90</td><td>Atenção para NAC</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h">Algoritmo de Tratamento Anti-Hipertensivo no Diabetes</div>
+    <div class="fb dec">Pessoas com Diabetes e Hipertensão Arterial</div>
+    <div class="fg">
+      <div>
+        <div class="fb act" style="font-size:12px"><strong>PA inicial 140/90 a &lt;160/100 mmHg</strong><br>→ Iniciar Monoterapia + MEV</div>
+        <div class="fb act" style="font-size:12px;margin-top:4px">Albuminúria &gt;30mg/g ou DAC?<br><strong>SIM:</strong> IECA ou BRA | <strong>NÃO:</strong> IECA, BRA, BCC ou DTZ</div>
+      </div>
+      <div>
+        <div class="fb warn" style="font-size:12px"><strong>PA ≥160/100 mmHg</strong><br>→ Iniciar Terapia Dupla</div>
+        <div class="fb warn" style="font-size:12px;margin-top:4px">Albuminúria &gt;30mg/g ou DAC?<br><strong>SIM:</strong> IECA/BRA + BCC ou DTZ<br><strong>NÃO:</strong> IECA ou BRA + BCC ou DTZ</div>
+      </div>
+    </div>
+    <div class="fa">↓</div>
+    <div class="fb" style="background:var(--surface)">Avaliar PA e Efeitos Adversos após 4–6 semanas</div>
+    <div class="fg">
+      <div class="fb good" style="font-size:12px">Meta atingida → <strong>Manter tratamento</strong></div>
+      <div class="fb warn" style="font-size:12px">Meta não atingida → Adicionar IECA, BRA, BCC ou DTZ (não combinar IECA+BRA) → Se ainda não atingir: considerar <strong>antagonistas do receptor mineralocorticoide</strong></div>
+    </div>
+    <p style="font-size:11px;color:var(--text2);margin-top:6px">PA: Pressão Arterial · DAC: Doença Arterial Coronariana · IECA: Inibidores da ECA · BRA: Bloqueadores do Receptor da Angiotensina II · BCC: Bloqueadores dos Canais de Cálcio · DTZ: Diurético Tiazídico</p>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TAB 3 — COMPLICAÇÕES CRÔNICAS
+═══════════════════════════════════════════════════════════ -->
+<div id="complic" class="panel">
+  <div class="section-header">
+    <span class="section-icon">🫀</span>
+    <h2 class="section-title">Complicações Crônicas</h2>
+  </div>
+
+  <div class="sl-lbl">3.1 Retinopatia Diabética (Microvascular)</div>
+
+  <div class="co co-b">
+    <div class="co-lbl">Definição</div>
+    <p>Complicação microvascular causada por alterações progressivas na microvasculatura da retina → má perfusão, maior permeabilidade vascular, exsudação e proliferação de neovasos retinianos. <strong>Primeira causa mundial de cegueira adquirida.</strong></p>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-h">Epidemiologia e Fatores de Risco</div>
+      <div class="ds-t">Prevalência DM1</div>
+      <ul class="pl">
+        <li>25% em 5 anos · 60% em 10 anos · 80% em 15 anos · 100% em 20 anos</li>
+      </ul>
+      <div class="ds-t">Prevalência DM2</div>
+      <ul class="pl"><li>60% em 20 anos de doença</li></ul>
+      <div class="ds-t">Fatores de Risco</div>
+      <ul class="pl">
+        <li>Mau controle glicêmico e variabilidade glicêmica</li>
+        <li>DM1 &gt; DM2 · Tempo de DM · HAS · Dislipidemia · Tabagismo</li>
+        <li>Nefropatia diabética associada</li>
+        <li>Puberdade e gestação (IGF-1, VEGF)</li>
+        <li>Fatores genéticos · Anemia</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-h">Fisiopatologia — Passos</div>
+      <ol class="step-list" style="list-style:none;padding:0">
+        <li class="si"><div class="sn">1</div><div class="sc"><strong>Via Aldose Redutase</strong><p>Excesso de glicose → metabolizado em álcool (sorbitol) pela aldose redutase</p></div></li>
+        <li class="si"><div class="sn">2</div><div class="sc"><strong>Alteração de Pericitos</strong><p>Pericitos afetados → endotélio frágil → abaulamentos → <strong>microaneurismas</strong></p></div></li>
+        <li class="si"><div class="sn">3</div><div class="sc"><strong>Resposta à Hipóxia</strong><p>Isquemia retiniana → expressão de IGF-1, VEGF → <strong>neoangiogênese e fibrose</strong></p></div></li>
+        <li class="si"><div class="sn">4</div><div class="sc"><strong>Modificações Endoteliais</strong><p>Quebra da barreira → extravasamento de proteínas, lipídios → <strong>exsudatos duros, hemorragias</strong></p></div></li>
+      </ol>
+      <div class="ds-t">Outros Mecanismos</div>
+      <ul class="pl">
+        <li><strong>PKC beta:</strong> ativada pela hiperglicemia → quebra da barreira hematorretiniana</li>
+        <li><strong>Edema macular:</strong> causa mais comum de baixa visual na RDNP. ↑DAG → ↑PKC → ↑permeabilidade</li>
+        <li><strong>Alterações hematológicas:</strong> ↑agregação plaquetária, ↓deformidade eritrócitos → oclusão capilar</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sl-lbl">Classificação Clínica da RD</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Classificação</th><th>Achados Retinianos</th><th>Risco</th></tr></thead>
+      <tbody>
+        <tr><td>Ausência de retinopatia</td><td>Normal</td><td><span class="tag tg">Baixo</span></td></tr>
+        <tr><td>RDNP Leve</td><td>Somente microaneurismas</td><td><span class="tag tg">Baixo</span></td></tr>
+        <tr><td>RDNP Moderada</td><td>Microaneurismas + outras alterações que não caracterizam grave</td><td><span class="tag ta">Moderado</span></td></tr>
+        <tr class="hl-r"><td>RDNP Grave</td><td>Qualquer uma: hemorragias nos 4 quadrantes, dilatações venosas ≥2 quadrantes, alterações vasculares intrarretinianas em ≥1 quadrante</td><td><span class="tag tr">Muito Alto</span></td></tr>
+        <tr class="hl-r"><td>RDNP Muito Grave</td><td>Presença de duas das três alterações da RDNP Grave</td><td><span class="tag tr">Muito Alto</span></td></tr>
+        <tr class="hl-r"><td>RDP (Proliferativa)</td><td>Neovascularização no disco óptico ou na retina; hemorragia vítrea</td><td><span class="tag tr">Muito Alto</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-h">Quadro Clínico e Achados</div>
+      <ul class="pl">
+        <li><strong>Microaneurismas:</strong> primeira alteração oftalmoscópica (oclusão capilar)</li>
+        <li><strong>Hemorragias em chama de vela:</strong> superficiais, próximas ao humor vítreo</li>
+        <li><strong>Exsudatos duros:</strong> amarelos, alto conteúdo lipídico</li>
+        <li><strong>Exsudatos algodonosos:</strong> brancas/acinzentadas → áreas de microinfarto e isquemia → estimulam neovasos</li>
+        <li><strong>Anormalidades venosas:</strong> dilatações, veias em rosário</li>
+        <li>Edema retiniano (macular ou não)</li>
+        <li>Descolamento de retina</li>
+        <li>Hemorragia vítrea ou pré-retiniana</li>
+        <li>Mononeuropatia do III, IV ou VI nervo craniano</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-h">Rastreio e Tratamento</div>
+      <div class="ds-t">Cronograma de Rastreio</div>
+      <ul class="pl">
+        <li><strong>DM1:</strong> após 5 anos do diagnóstico ou na puberdade → anualmente. Adolescentes: considerar a partir dos 11a com ≥2–5 anos de DM.</li>
+        <li><strong>DM2:</strong> ao diagnóstico → anualmente</li>
+        <li><strong>Gestantes com DM prévia:</strong> trimestralmente durante gestação + 1º ano pós-parto</li>
+      </ul>
+      <div class="ds-t">Técnica</div>
+      <ul class="pl">
+        <li>Retinografia, angiografia fluorescente ou TCO</li>
+        <li>Fundoscopia: se DRC → quase 100% também tem retinopatia diabética</li>
+      </ul>
+      <div class="ds-t" style="margin-top:8px">Tratamento</div>
+      <ul class="pl">
+        <li>Controle da HAS, dislipidemia e glicemia</li>
+        <li><strong>Fotocoagulação:</strong> edema macular + RDP + RDNP grave (2–3 sessões laser, intervalos 1 semana)</li>
+        <li><strong>Vitrectomia:</strong> hemorragia vítrea, descolamento de retina, neovascularização intensa sem resposta a laser</li>
+        <li><strong>Corticoide intravítreo:</strong> edema macular (controverso — risco glaucoma/catarata)</li>
+        <li><strong>Anti-VEGF:</strong> redução de complicações intra e pós-operatórias</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sl-lbl">3.2 Nefropatia Diabética (Doença Renal do Diabetes — DRD)</div>
+
+  <div class="co co-b">
+    <div class="co-lbl">Epidemiologia</div>
+    <p>DRD acomete ~35% dos diabéticos. No mundo: DM é a 1ª causa de DRC. No Brasil: HAS &gt; DM como causa de DRC. 30% dos pacientes em diálise no Brasil são diabéticos. Pacientes com DM + proteinúria têm risco relativo de morte prematura até <strong>100× superior</strong> à população não diabética.</p>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-h">Estágios da DRD</div>
+      <ul class="pl">
+        <li><strong>Estágio 1 — Hiperfiltração:</strong> ↑TFG (↑clearance Cr), normoalbuminúria, rins aumentados. <em>Potencialmente reversível com controle glicêmico rigoroso.</em></li>
+        <li><strong>Estágio 2 — Microalbuminúria (Nefropatia Incipiente):</strong> AEU 20–200 µg/min ou 30–300 mg/24h. TFG geralmente elevada, com tendência ao declínio.</li>
+        <li><strong>Estágio 3 — Proteinúria (Nefropatia Clínica):</strong> AEU &gt;200 µg/min ou &gt;300 mg/24h. ↓TFG progressiva + hipertensão.</li>
+        <li><strong>Estágio 4 — Nefropatia Terminal:</strong> IRC em programa de diálise ou transplante renal.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-h">Definição KDIGO — DRC</div>
+      <ul class="pl">
+        <li>Declínio <strong>progressivo e irreversível</strong> da função renal por <strong>&gt;3 meses</strong></li>
+        <li><strong>TFG &lt;60:</strong> independente da causa, &gt;3 meses</li>
+        <li><strong>TFG &gt;60:</strong> + marcadores de dano parenquimatoso ou exame de imagem</li>
+        <li><strong>Principais marcadores:</strong> TFG (CKD-EPI) e Albuminúria</li>
+      </ul>
+      <div class="ds-t">Marcadores de Dano Renal</div>
+      <ul class="pl">
+        <li>Albuminúria (AEU ≥30 mg/g ou ≥3 mg/mmol)</li>
+        <li>Sedimento urinário alterado</li>
+        <li>Anormalidades eletrolíticas por distúrbios tubulares</li>
+        <li>Anormalidades por histologia ou imagem</li>
+        <li>Histórico de transplante renal</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sl-lbl">Rastreamento e Tratamento da DRD</div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-h">Rastreamento</div>
+      <ul class="pl">
+        <li><strong>DM2:</strong> logo após o diagnóstico</li>
+        <li><strong>DM1:</strong> após 5 anos do diagnóstico, a partir dos 11 anos</li>
+        <li><strong>Frequência:</strong> <span class="tag tr">ANUALMENTE</span> — albumina urinária, RAC, TFG (CKD-EPI)</li>
+        <li><strong>RAC &gt;30 mg/g:</strong> confirmar em pelo menos 2 de 3 amostras coletadas com intervalo de 3–6 meses</li>
+        <li><strong>Dica prática:</strong> Se suspeita de DRC → faça fundoscopia. Se positiva para retinopatia diabética, a chance de DRD confirmada é alta.</li>
+      </ul>
+      <div class="co co-r" style="margin-top:8px">
+        <div class="co-lbl">⚠️ Sinais de Alerta — Pensar em Outra Etiologia</div>
+        <ul class="pl">
+          <li>Proteinúria em DM1 com &lt;5 anos de doença</li>
+          <li>Início abrupto ou proteinúria rapidamente progressiva</li>
+          <li>Declínio rápido da TFGe (&gt;4 mL/min/ano)</li>
+          <li>Sedimento urinário alterado</li>
+          <li>Ausência de retinopatia ou neuropatia diabética</li>
+          <li>Queda rápida da TFGe ≥30% após início de IECA/BRA</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h">Tratamento e Prevenção da Progressão</div>
+      <ul class="pl">
+        <li>Controle intensivo da glicemia — Meta: <strong>HbA1c ≤7% (máx. 8–8,5%)</strong></li>
+        <li>Controle rigoroso da PA (IECA/BRA preferenciais)</li>
+        <li>iSGLT2: proteção renal independente do controle glicêmico</li>
+        <li>Dapagliflozina: iniciar até TFG ≥25, manter até diálise</li>
+        <li>Empagliflozina: iniciar até TFG ≥20, manter até diálise</li>
+      </ul>
+      <div class="ds-t" style="margin-top:8px">Classificação de Risco DRC (KDIGO)</div>
+      <ul class="pl">
+        <li><span class="tag tg">Verde — G1-G2/A1:</span> Baixo risco → somente rastreio</li>
+        <li><span class="tag ta">Amarelo — G1-G2/A2:</span> Risco moderado → tratamento</li>
+        <li><span class="tag tr">Laranja — G3/A2-A3:</span> Alto risco → tratamento</li>
+        <li><span class="tag tr">Vermelho — G4-G5/A3:</span> Muito alto risco → tratamento intensivo</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sl-lbl">3.3 Neuropatia Diabética</div>
+
+  <div class="co co-b">
+    <div class="co-lbl">Definição</div>
+    <p>Grupo heterogêneo de desordens com disfunção dos nervos do SNP (somático e/ou autonômico) em decorrência do DM, na ausência de outras causas. <strong>Mais comum: Polineuropatia Sensitivo-Motora.</strong> Acomete até <strong>50%</strong> dos pacientes com diabetes — <strong>complicação crônica mais comum</strong>.</p>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-h">Fisiopatologia — Via dos Polióis</div>
+      <ol class="sl">
+        <li class="si"><div class="sn">1</div><div class="sc"><p>Glicose → Via aldose redutase → <strong>metabolizada em sorbitol</strong></p></div></li>
+        <li class="si"><div class="sn">2</div><div class="sc"><p>Acúmulo de sorbitol intracelular → <strong>altera osmolaridade celular</strong></p></div></li>
+        <li class="si"><div class="sn">3</div><div class="sc"><p>↓Mio-inositol e ↓atividade da bomba <strong>Na-K-ATPase</strong></p></div></li>
+        <li class="si"><div class="sn">4</div><div class="sc"><p>↓<strong>Velocidade de condução nervosa</strong></p></div></li>
+      </ol>
+      <div class="ds-t">Outros mecanismos</div>
+      <ul class="pl">
+        <li>Via dos polióis: ↓NADPH e ↓NO → vasoconstrição</li>
+        <li>Estresse oxidativo</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-h">Classificação das Neuropatias Diabéticas</div>
+      <div class="ds-t">Difusas</div>
+      <ul class="pl">
+        <li><strong>Polineuropatia Somática Sensitivo-Motora</strong> — fibras finas, grossas ou mistas (mais comum)</li>
+        <li><strong>Autonômica:</strong> cardiovascular, gastrintestinal, urogenital, disfunção sudomotora, hipoglicemia assintomática, função pupilar anormal</li>
+        <li><strong>Atípica:</strong> caquexia diabética, induzida pelo tratamento, metabólica</li>
+      </ul>
+      <div class="ds-t">Focais</div>
+      <ul class="pl">
+        <li><strong>Mononeuropatia:</strong> isolada ou focal (NC ou nervo periférico); múltipla ou multifocal</li>
+        <li><strong>Radiculopatia:</strong> torácica, lombar, amiotrofia, túnel do carpo, fibular (pé caído), meralgia parestésica, ocular</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-h">Quadro Clínico — Sintomas</div>
+      <div class="g2">
+        <div>
+          <div class="ds-t">Sintomas Positivos</div>
+          <ul class="pl"><li>Ardor, queimação, pontadas, câimbras, choques, alodinia, hiperalgesia</li></ul>
+        </div>
+        <div>
+          <div class="ds-t">Sintomas Negativos</div>
+          <ul class="pl"><li>Sensação de pé frio, perda de sensibilidade, dormência</li></ul>
+        </div>
+      </div>
+      <div class="co co-r" style="margin-top:8px">
+        <div class="co-lbl">⚠️ Diagnóstico</div>
+        <p>A ND <strong>não pode ser diagnosticada</strong> com base em um único sinal, sintoma ou teste. Exige <strong>pelo menos 2 alterações</strong> sugestivas entre história clínica, testes de rastreio ou testes de condução nervosa.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h">Tratamento</div>
+      <p>ND estabelecida é <strong>irreversível</strong>. Objetivo: evitar progressão e complicações (úlceras, artropatias, quedas) via <strong>otimização do controle glicêmico</strong> + cuidados com pé diabético.</p>
+      <div class="ds-t">Farmacológico para Dor Neuropática</div>
+      <ul class="pl">
+        <li><strong>IRSN:</strong> Duloxetina, Venlafaxina</li>
+        <li><strong>Antidepressivos tricíclicos:</strong> Amitriptilina, Nortriptilina</li>
+        <li><strong>Gabapentinóides:</strong> Pregabalina, Gabapentina</li>
+      </ul>
+      <div class="ds-t">Diagnósticos Diferenciais</div>
+      <ul class="pl">
+        <li>Deficiência de B12 (especialmente com metformina)</li>
+        <li>HIV, Hipertireoidismo, Herpes Zoster</li>
+        <li>Alterações eletrolíticas, Excesso de B6</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h">Testes de Rastreio — Anualmente</div>
+    <div class="g2">
+      <div>
+        <div class="ds-t">Rastreio de Neuropatia (1×/ano)</div>
+        <ul class="pl">
+          <li>Teste doloroso · Teste térmico · Teste vibratório</li>
+        </ul>
+        <div class="ds-t">Rastreio de Risco para Pé Diabético (1×/ano)</div>
+        <ul class="pl">
+          <li>Palpação de pulsos: pedioso, tibial anterior e tibial posterior</li>
+          <li>Análise de calosidades</li>
+          <li>Se alterados: realizar escore de comprometimento neuropático (ECN/NDS)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="co co-r">
+          <div class="co-lbl">⚠️ Ponto de Prova</div>
+          <p><strong>Monofilamento 10g NÃO é rastreio de neuropatia.</strong> Ele avalia risco de desenvolvimento de <strong>pé diabético</strong>.</p>
+        </div>
+        <div class="ds-t">Fibras por Tipo</div>
+        <ul class="pl">
+          <li><strong>Fibras finas</strong> (pouca/sem mielina — C e delta): perda de CALOR (1ª), depois DOR (2ª)</li>
+          <li><strong>Fibras grossas</strong> (mielinizadas): vibração, pressão, reflexos</li>
+        </ul>
+        <div class="ds-t">ECN/NDS — Interpretação</div>
+        <ul class="pl">
+          <li>0–2: Ausente · 3–5: Leve · 6–8: Moderada · 9–10: Severa</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TAB 4 — CLASSES FARMACOLÓGICAS
+═══════════════════════════════════════════════════════════ -->
+<div id="classes" class="panel">
+  <div class="section-header">
+    <span class="section-icon">💊</span>
+    <h2 class="section-title">Classes Farmacológicas</h2>
+  </div>
+
+  <div class="co co-a">
+    <div class="co-lbl">🎯 Drogas que Previnem DM2</div>
+    <p>Acarbose · Metformina · Pioglitazona · Semaglutida</p>
+  </div>
+
+  <!-- METFORMINA -->
+  <div class="dc">
+    <div class="dc-hd">
+      <span class="dc-nm">Metformina</span>
+      <div class="brow"><span class="tag tb">Biguanida</span><span class="tag tg">1ª Linha — Baixo/Médio Risco CV</span><span class="tag tg">NÃO gera hipoglicemia</span></div>
+    </div>
+    <div class="dc-bd">
+      <div class="g2">
+        <div>
+          <div class="ds-t">Nomes Comerciais</div>
+          <p>Glifage®, Glifage XR®, Glucoformin®</p>
+          <div class="ds-t">Mecanismo de Ação</div>
+          <ul class="pl">
+            <li><strong>Não possui efeito direto sobre células beta</strong></li>
+            <li>M1: ↓resistência periférica à insulina (especialmente fígado)</li>
+            <li>M2: ↓gliconeogênese hepática (75% da ação anti-hiperglicêmica)</li>
+            <li>M3: ↑sinalização hepática do glucagon; ↑glicogênio sintase</li>
+            <li>M4: No tecido adiposo: ↓reesterificação de AGL e ↓lipólise → ↓lipotoxicidade</li>
+          </ul>
+          <div class="ds-t">Indicações Adicionais</div>
+          <ul class="pl"><li>Pré-DM · SOP (Síndrome dos Ovários Policísticos)</li></ul>
+        </div>
+        <div>
+          <div class="ds-t">Efeitos Adversos</div>
+          <ul class="pl">
+            <li>Sintomas GI: diarreia, náusea, anorexia (iniciar dose pós-jantar e aumentar progressivamente)</li>
+            <li><strong>Deficiência de B12</strong> — rastrear 1×/ano após 4 anos de uso, especialmente se anemia ou neuropatia</li>
+            <li>Acidose lática (rara — mas evitar na internação hospitalar)</li>
+          </ul>
+          <div class="ds-t">Contraindicações</div>
+          <ul class="pl">
+            <li><span class="tag tr">CI absoluta</span> TFG &lt;30 mL/min</li>
+            <li><span class="tag ta">Ajuste</span> TFG 30–45: dose máx. <strong>1 g/dia</strong></li>
+            <li>IRC grave, IC congestiva III-IV, IH, IR respiratória grave</li>
+          </ul>
+          <div class="ds-t">Vantagens</div>
+          <ul class="pl">
+            <li>↓Glicemia jejum 60–70 mg/dL e HbA1c 1,5–2,0%</li>
+            <li>Potencialmente ↓eventos CV; previne progressão para DM2</li>
+            <li>Melhora perfil lipídico; não causa ganho de peso; baixo custo</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dir">
+        <div class="dir-lbl">📌 SBD/ADA 2025</div>
+        <div class="dir-item">
+          <div class="dir-t">Mudança de Paradigma</div>
+          <p>Metformina <strong>não é mais obrigatoriamente a 1ª linha universal</strong>. Em pacientes com alto/muito alto risco CV, IC ou DRC, os <strong>iSGLT2 ou AR GLP-1</strong> são AD1, independentemente do uso prévio de metformina ou do valor de HbA1c.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIOGLITAZONA -->
+  <div class="dc">
+    <div class="dc-hd">
+      <span class="dc-nm">Pioglitazona</span>
+      <div class="brow"><span class="tag tb">Glitazona (PPAR-γ)</span><span class="tag tg">NÃO gera hipoglicemia</span></div>
+    </div>
+    <div class="dc-bd">
+      <div class="g2">
+        <div>
+          <div class="ds-t">Nomes Comerciais</div>
+          <p>Gliozac®, Piotaz®, Pioglit®, Actos®, Stanglit®</p>
+          <div class="ds-t">Mecanismo de Ação</div>
+          <ul class="pl">
+            <li>Agonista do receptor PPAR-γ (tecido adiposo, fígado, coração, músculo, vasos)</li>
+            <li>E1: ↓resistência periférica à insulina (músculo e adiposo) via ↑GLUT1/GLUT4</li>
+            <li>E2: ↑lipogênese e ↑massa adiposa subcutânea → ↓AGL circulantes e ↓inflamação</li>
+            <li>E3: ↑produção de lipases e hidrólise de TG intravascular</li>
+            <li>E4: ↑Apo AI → ↑HDL</li>
+          </ul>
+          <div class="ds-t">Vantagens Específicas</div>
+          <ul class="pl">
+            <li>Reduz espessamento médio-intimal carotídeo</li>
+            <li>Melhora perfil lipídico (↓TG); ↓gordura hepática</li>
+            <li>Tratamento de DHEM (esteato-hepatite) mesmo sem DM associado (MEV + Pioglitazona)</li>
+          </ul>
+        </div>
+        <div>
+          <div class="ds-t">Efeitos Adversos</div>
+          <ul class="pl">
+            <li>Ganho de peso (retenção hídrica + edemas)</li>
+            <li>Risco de fraturas (↑osteoclastos, ↓osteoblastos)</li>
+            <li>Risco de IC em pacientes propensos à retenção hídrica</li>
+          </ul>
+          <div class="ds-t">Contraindicações</div>
+          <ul class="pl">
+            <li><span class="tag tr">CI absoluta</span> ICC III e IV</li>
+            <li><span class="tag tr">CI</span> IH · Gestação · Osteopenia/Osteoporose · Edema macular</li>
+            <li><span class="tag tr">CI</span> DRC com TFG &lt;30</li>
+          </ul>
+          <div class="ds-t">Eficácia</div>
+          <ul class="pl">
+            <li>↓Glicemia jejum 35–65 mg/dL; HbA1c 0,5–1,4%</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dir">
+        <div class="dir-lbl">📌 SBD 2024/2025</div>
+        <div class="dir-item">
+          <div class="dir-t">1ª Linha para DHEM (antiga DHGNA)</div>
+          <p>Pioglitazona é <strong>tratamento de primeira linha</strong> para esteato-hepatite e/ou fibrose hepática em DM2. Risco de fratura especialmente em <strong>mulheres na pós-menopausa</strong> — limitar uso neste grupo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- iSGLT2 -->
+  <div class="dc">
+    <div class="dc-hd">
+      <span class="dc-nm">Inibidores do SGLT-2 (Glifozinas)</span>
+      <div class="brow"><span class="tag tg">1ª Linha — Alto Risco CV / IC / DRC</span><span class="tag tg">NÃO gera hipoglicemia</span></div>
+    </div>
+    <div class="dc-bd">
+      <div class="g2">
+        <div>
+          <div class="ds-t">Representantes</div>
+          <ul class="pl">
+            <li>Dapagliflozina (Forxiga®)</li>
+            <li>Empagliflozina (Jardiance®)</li>
+            <li>Canagliflozina (Invokana®)</li>
+          </ul>
+          <div class="ds-t">Fisiologia e Mecanismo</div>
+          <ul class="pl">
+            <li>~90% da glicose filtrada reabsorvida no TCP via SGLT-2; 10% via SGLT-1</li>
+            <li>iSGLT2 → inibe SGLT-2 → bloqueia reabsorção de glicose e sódio</li>
+            <li>E1: ↓reabsorção de glicose renal → glicosúria</li>
+            <li>E2: ↓reabsorção de Na⁺ e H₂O → ↓PA</li>
+            <li>E3: ↓ativação do SRAA → ↓renina, aldosterona e fibrose</li>
+            <li>E4: ↓estresse oxidativo renal → ↓albuminúria → retardo da nefropatia</li>
+          </ul>
+        </div>
+        <div>
+          <div class="ds-t">Efeitos Adversos</div>
+          <ul class="pl">
+            <li>Desidratação</li>
+            <li>ITU recorrente — suspender se &gt;2 eventos</li>
+            <li>Cetoacidose euglicêmica (eCAD) — mecanismo: ↓glicose → ↓insulina → cetogênese sem bloqueio adequado</li>
+          </ul>
+          <div class="ds-t">Contraindicações</div>
+          <ul class="pl">
+            <li><span class="tag tr">NUNCA</span> em DM1 (risco de cetoacidose)</li>
+            <li><span class="tag tr">CI</span> História prévia de cetoacidose</li>
+            <li><span class="tag tr">CI</span> DRC com TFG &lt;20 para <em>início</em> (mas manter se já usava)</li>
+            <li><span class="tag tr">NÃO PRESCREVER</span> se paciente com sintomas de insulinopenia (polis)</li>
+          </ul>
+          <div class="ds-t">Vantagens Cardiometabólicas</div>
+          <ul class="pl">
+            <li>↓Eventos CV e mortalidade CV em DM + DCV (EMPA-REG, CANVAS)</li>
+            <li>↓Internação por IC</li>
+            <li>↓Desfechos renais; ↓PA; ↓peso discreto</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dir">
+        <div class="dir-lbl">📌 SBD 2025 — Atualizações Críticas</div>
+        <div class="dir-item">
+          <div class="dir-t">Novos Limiares de TFG</div>
+          <p>Dapagliflozina: iniciar até TFG ≥25, manter até entrada em diálise. Empagliflozina: iniciar até TFG ≥20, manter até entrada em diálise. Janela terapêutica ampliada enormemente na nefropatia.</p>
+        </div>
+        <div class="dir-item">
+          <div class="dir-t">Suspensão Pré-operatória e em Adoecimento</div>
+          <p><strong>Suspender 24–72h antes</strong> de cirurgias maiores, procedimentos invasivos ou exercícios exaustivos. Suspender proativamente se cetonemia capilar &gt;1,5 mmol/L em paciente adoecido. Threshold de eCAD: cetonemia &gt;3,0 mmol/L.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AR GLP-1 -->
+  <div class="dc">
+    <div class="dc-hd">
+      <span class="dc-nm">Análogos do GLP-1 (AR GLP-1)</span>
+      <div class="brow"><span class="tag tg">1ª Linha — Alto Risco CV / Obesidade</span><span class="tag tg">NÃO gera hipoglicemia</span></div>
+    </div>
+    <div class="dc-bd">
+      <div class="g2">
+        <div>
+          <div class="ds-t">Representantes e Posologia</div>
+          <ul class="pl">
+            <li>Liraglutida (Victoza®, Saxenda®) — <strong>DIÁRIO</strong></li>
+            <li>Semaglutida oral (Rybelsus®) — <strong>DIÁRIO em jejum com ≥120 mL de água</strong></li>
+            <li>Dulaglutida (Trulicity®) — <strong>SEMANAL</strong></li>
+            <li>Semaglutida SC (Ozempic®) — <strong>SEMANAL</strong></li>
+          </ul>
+          <div class="ds-t">Fisiologia do GLP-1</div>
+          <ul class="pl">
+            <li>Hormônio das células L enteroendócrinas (íleo e cólon)</li>
+            <li>A1: ↑secreção de insulina <strong>dependente de glicose</strong></li>
+            <li>A2: ↓secreção de glucagon; ↓produção hepática de glicose</li>
+            <li>A3: Retardo esvaziamento gástrico; saciedade; ↓apetite; perda ponderal</li>
+            <li>A4: ↑captação de glicose pelo músculo e adipócitos</li>
+            <li>Metabolização: degradado pela DPP-4 (meia-vida 2–3 min). AR GLP-1 são resistentes à DPP-4 — efeito extrafisiológico → perda de peso</li>
+          </ul>
+        </div>
+        <div>
+          <div class="ds-t">Efeitos Adversos</div>
+          <ul class="pl">
+            <li>Náusea, vômitos, diarreia (GI)</li>
+            <li>Hipoglicemia quando associado a secretagogos</li>
+            <li>↑FC discreta</li>
+            <li>Pancreatite aguda (raro — somente injetáveis)</li>
+            <li>Colelitíase (perda de peso rápida)</li>
+          </ul>
+          <div class="ds-t">Contraindicações</div>
+          <ul class="pl">
+            <li>Hipersensibilidade</li>
+            <li><span class="tag tr">CMT</span> ou história familiar de Carcinoma Medular de Tireoide</li>
+            <li>Pancreatite anterior</li>
+            <li><span class="tag tr">Não combinar</span> com inibidores da DPP-4 (mesma via)</li>
+            <li>Evitar se TFG &lt;30; manter se já usava até TFG &lt;15</li>
+            <li><span class="tag tr">CI absoluta</span> TFG &lt;15 mL/min</li>
+          </ul>
+          <div class="ds-t">Eficácia</div>
+          <ul class="pl">
+            <li>↓Glicemia jejum ~30 mg/dL; HbA1c 0,8–1,5%</li>
+            <li>↓Peso corporal; ↓PA sistólica; ↓TG pós-prandiais (semaglutida oral)</li>
+            <li>↓Eventos CV em DCV aterosclerótica; ↓albuminúria</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dir">
+        <div class="dir-lbl">📌 SBD 2025</div>
+        <div class="dir-item">
+          <div class="dir-t">Tirzepatida — Coagonista GIP/GLP-1</div>
+          <p>Altamente recomendada para DM2 com obesidade. Eficácia superior a GLP-1 puro na redução de peso e controle glicêmico. Pode adiar ou substituir cirurgia bariátrica e grandes doses de insulina.</p>
+        </div>
+        <div class="dir-item">
+          <div class="dir-t">Terapia Dupla Inicial</div>
+          <p>Em HbA1c ≥7,5% com sobrepeso/obesidade: início direto de <strong>Metformina + AR GLP-1/Tirzepatida</strong> é fortemente indicado para combater inércia terapêutica.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DPP-4 -->
+  <div class="dc">
+    <div class="dc-hd">
+      <span class="dc-nm">Inibidores da DPP-4 (Gliptinas)</span>
+      <div class="brow"><span class="tag tb">Incretínico</span><span class="tag tg">NÃO gera hipoglicemia</span><span class="tag tz">NÃO afeta peso</span></div>
+    </div>
+    <div class="dc-bd">
+      <div class="g2">
+        <div>
+          <div class="ds-t">Representantes e Posologia</div>
+          <ul class="pl">
+            <li>Sitagliptina (Januvia®) 50–100 mg — 1–2×/dia</li>
+            <li>Vildagliptina (Galvus®) 50 mg — 2×/dia</li>
+            <li>Linagliptina (Trayenta®) 5 mg — 1×/dia</li>
+            <li>Alogliptina (Nesina®) 6,25/12,5/25 mg — 1×/dia</li>
+            <li>Saxagliptina (Onglyza®) 2,5/5 mg — 1×/dia</li>
+            <li>Evogliptina (Suganon®) 5 mg — 1×/dia</li>
+          </ul>
+          <div class="ds-t">Mecanismo</div>
+          <p>Inibem a DPP-4 → ↑GLP-1 e GIP endógenos → estímulo glicose-dependente de insulina (células β) + inibição de glucagon (células α). <strong>Somente fisiológico → NÃO causa perda de peso.</strong></p>
+        </div>
+        <div>
+          <div class="ds-t">Efeitos Adversos</div>
+          <ul class="pl">
+            <li>Raros em geral</li>
+            <li>Angioedema e urticária</li>
+            <li>Probabilidade de pancreatite aguda</li>
+            <li><span class="tag tr">Saxagliptina e Alogliptina:</span> ↑risco de internação por IC</li>
+          </ul>
+          <div class="ds-t">Contraindicações</div>
+          <ul class="pl">
+            <li>Hipersensibilidade</li>
+            <li><span class="tag tr">Não combinar</span> com AR GLP-1 (mesma via)</li>
+          </ul>
+          <div class="ds-t">Eficácia</div>
+          <ul class="pl">
+            <li>↓Glicemia jejum ~20–30 mg/dL; HbA1c 0,6–1,5%</li>
+            <li>Segurança e tolerabilidade</li>
+            <li>↑Massa de células beta (modelos animais)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SULFONILUREIAS -->
+  <div class="dc">
+    <div class="dc-hd">
+      <span class="dc-nm">Sulfonilureias (Secretagogos)</span>
+      <div class="brow"><span class="tag tr">GERA hipoglicemia</span></div>
+    </div>
+    <div class="dc-bd">
+      <div class="g2">
+        <div>
+          <div class="ds-t">Representantes e Posologia</div>
+          <ul class="pl">
+            <li>Gliclazida MR (Diamicron MR®) 30–120 mg/dia — 1×/dia *</li>
+            <li>Glimepirida (Amaryl®, Betes®) 1–4 mg/dia — 1×/dia *</li>
+            <li>Glibenclamida (Daonil®) 2,5–20 mg/dia — 1–2×/dia</li>
+          </ul>
+          <p style="font-size:11.5px;color:var(--text2)">* Preferidas por menor risco de hipoglicemia grave</p>
+          <div class="ds-t">Mecanismo</div>
+          <p>Ligam ao receptor SUR1 nas células β → fecham canal K⁺ → despolarização → abertura do canal de Ca²⁺ → ↑secreção de insulina. <strong>Estimulam secreção, NÃO síntese. Exigem células β funcionantes.</strong></p>
+        </div>
+        <div>
+          <div class="ds-t">Efeitos Adversos</div>
+          <ul class="pl">
+            <li><span class="tag tr">HIPOGLICEMIA</span> (principal — especialmente Glibenclamida em idosos)</li>
+            <li>Ganho de peso (retenção hídrica + ↑apetite por compensação de hipoglicemia)</li>
+            <li>Falência pancreática a longo prazo</li>
+          </ul>
+          <div class="ds-t">Contraindicações</div>
+          <ul class="pl">
+            <li><span class="tag tr">CI</span> TFG &lt;30 mL/min</li>
+            <li>IH · DM com deficiência grave de insulina · Infecções graves · Gestação</li>
+            <li><span class="tag tr">⚠️ Idosos (relativa)</span> — alto risco de hipoglicemia grave</li>
+            <li><span class="tag tr">SUSPENDER</span> durante internação hospitalar (jejum + risco de hipoglicemia fatal)</li>
+          </ul>
+          <div class="ds-t">Eficácia</div>
+          <ul class="pl">
+            <li>↓Glicemia jejum 60–70 mg/dL; HbA1c 1,5–2,0%</li>
+            <li>↓Complicações microvasculares; maior potência na redução de HbA1c</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACARBOSE + GLINIDAS -->
+  <div class="g2">
+    <div class="dc">
+      <div class="dc-hd">
+        <span class="dc-nm">Acarbose</span>
+        <div class="brow"><span class="tag tb">Inibidor α-glicosidase</span></div>
+      </div>
+      <div class="dc-bd">
+        <div class="ds-t">Mecanismo</div>
+        <p>Inibidor da alfa-glicosidase (enzima na borda em escova do TGI) → retardo da absorção de carboidratos → ↓glicemia pós-prandial. Efeito <strong>local</strong>.</p>
+        <div class="ds-t">Nomes Comerciais</div>
+        <p>Acarose®, Glucobay® — 50 a 300 mg junto às refeições</p>
+        <div class="ds-t">Eficácia</div>
+        <ul class="pl"><li>↓Glicemia jejum 20–30 mg/dL; HbA1c 0,5–0,8%</li><li>↓Eventos CV; ↓espessamento médio-intimal carotídeo; melhora perfil lipídico</li></ul>
+        <div class="ds-t">Efeitos Adversos</div>
+        <ul class="pl"><li>Flatulência, meteorismo, diarreia (GI)</li></ul>
+        <div class="ds-t">Contraindicações</div>
+        <ul class="pl">
+          <li><span class="tag tr">Não usar</span> ClCr &lt;30 mL/min; <span class="tag ta">Ajustar</span> ClCr 30–45</li>
+          <li>Doença inflamatória intestinal · Doença intestinal associada à má absorção · DRC grave</li>
+          <li>Gestação</li>
+        </ul>
+        <p style="font-size:11.5px;color:var(--text2)">Também indicada no pré-DM e na gestação na inviabilidade de insulina.</p>
+      </div>
+    </div>
+    <div class="dc">
+      <div class="dc-hd">
+        <span class="dc-nm">Glinidas (Secretagogos de Ação Curta)</span>
+        <div class="brow"><span class="tag tr">GERA hipoglicemia</span></div>
+      </div>
+      <div class="dc-bd">
+        <div class="ds-t">Representantes</div>
+        <ul class="pl">
+          <li>Repaglinida (Prandin®, Posprand®) 0,5–16 mg/dia — 3×/dia</li>
+          <li>Nateglinida (Starlix®) 120–360 mg/dia — 3×/dia</li>
+        </ul>
+        <div class="ds-t">Mecanismo</div>
+        <p>Ligação ao receptor SUR1 nas células β → despolarização → ↑secreção de insulina. Ação mais curta que SU → maior flexibilidade de dose.</p>
+        <div class="ds-t">Eficácia</div>
+        <ul class="pl">
+          <li>↓Glicemia jejum 20–30 mg/dL; HbA1c 1,0–1,5%</li>
+          <li>↓Variabilidade da glicose pós-prandial; flexibilidade de dose</li>
+        </ul>
+        <div class="ds-t">Efeitos Adversos / CI</div>
+        <ul class="pl">
+          <li>Hipoglicemia (menor que SU) · Ganho de peso</li>
+          <li>CI: IH · Gestação</li>
+          <li><span class="tag ta">Cuidado</span> se TFG &lt;30: usar doses mínimas (repaglinida)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TAB 5 — SEQUÊNCIA DE TRATAMENTO
+═══════════════════════════════════════════════════════════ -->
+<div id="sequencia" class="panel">
+  <div class="section-header">
+    <span class="section-icon">📋</span>
+    <h2 class="section-title">Sequência de Tratamento</h2>
+  </div>
+
+  <div class="sl-lbl">5.8 Sequência de Tratamento do DM2</div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-h">DM2 Sem Complicações Cardiovasculares ou Renais</div>
+      <div class="tw">
+        <table>
+          <thead><tr><th>HbA1c</th><th>Assintomático</th><th>Sintomático</th></tr></thead>
+          <tbody>
+            <tr class="hl-g"><td>&lt;7,5%</td><td><strong>Monoterapia:</strong> Metformina</td><td rowspan="2"><strong>Terapia Baseada em Insulina</strong> (com ou sem metformina)</td></tr>
+            <tr class="hl-a"><td>7,5–9,0%</td><td><strong>Terapia Dupla:</strong> Metformina + AD</td></tr>
+            <tr class="hl-r"><td>&gt;9,0%</td><td><strong>Terapia Dupla:</strong> Metformina + AD</td><td><strong>Terapia Baseada em Insulina</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="pl">
+        <li>Se HbA1c acima da meta após 3 meses → <strong>Terapia Tripla:</strong> MTF + 2 AD ou TBI</li>
+        <li>Se ainda acima → <strong>Terapia Quádrupla:</strong> MTF + 3 AD ou TBI</li>
+        <li>Quando clinicamente estável com HbA1c &gt;9%: considerar DUPLA com MET+AD</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-h">DM2 com Doença Cardiovascular Aterosclerótica</div>
+      <div class="fb act"><strong>AD1:</strong> Metformina + [GLP-1 RA ou iSGLT2]</div>
+      <div class="fa">↓ Se HbA1c acima da meta</div>
+      <div class="fb act"><strong>Terapia Tripla:</strong> Metformina + GLP-1 RA + iSGLT2</div>
+      <div class="fa">↓ Se HbA1c acima da meta</div>
+      <div class="fb warn"><strong>Terapia Quádrupla:</strong> MTF + iSGLT2 + GLP-1 RA + outro AD OU Terapia Baseada em Insulina</div>
+    </div>
+  </div>
+
+  <div class="sl-lbl">Tratamento do DM2 por Risco CV e Perfil — Tabela Decisória (SBD/ADA 2025)</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Risco CV</th><th>Obesidade?</th><th>HbA1c &lt;7,5%</th><th>HbA1c ≥7,5%</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="2"><span class="tag tg">Baixo / Intermediário</span></td><td>Sim</td><td>MTF</td><td>MTF + iSGLT2 <em>ou</em> AR GLP-1 / TZP</td></tr>
+        <tr><td>Não</td><td>MTF <em>ou</em> iSGLT2</td><td>MTF + AR GLP-1 / TZP</td></tr>
+        <tr class="hl-r"><td rowspan="2"><span class="tag tr">Alto / Muito Alto</span></td><td>Sim</td><td><strong>iSGLT2</strong></td><td><strong>iSGLT2 + MTF</strong></td></tr>
+        <tr class="hl-r"><td>Não</td><td><strong>AR GLP-1</strong></td><td><strong>AR GLP-1 + iSGLT2</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sl-lbl">5.9 Indicações de Insulinoterapia no DM2</div>
+  <div class="card">
+    <div class="card-h">Quando Introduzir Insulina?</div>
+    <div class="g2">
+      <div>
+        <div class="ds-t">Em qualquer tempo, independente de outros requisitos</div>
+        <ul class="pl">
+          <li>Sinais de catabolismo: perda de peso, cetose, hipertrigliceridemia</li>
+          <li>Sinais de hiperglicemia descompensada (poliúria, polidipsia, noctúria, perda de peso)</li>
+          <li>Glicemia plasmática ≥300 mg/dL ou HbA1c ≥10% (ADA) / ≥9% (SBD)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="ds-t">Como 3º antidiabético (após falha de dupla/tripla)</div>
+        <ul class="pl">
+          <li>Pacientes com DCV</li>
+          <li>DRC</li>
+          <li>Baixo poder aquisitivo (custo)</li>
+        </ul>
+        <div class="ds-t">Como 4º antidiabético</div>
+        <ul class="pl">
+          <li>Pacientes com risco de hipoglicemia</li>
+          <li>Pacientes com sobrepeso</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl-lbl">Passo a Passo da Insulinização no DM2</div>
+  <div class="card">
+    <div class="card-h">Passo 1 — Esquema Basal Inicial</div>
+    <ul class="pl">
+      <li>Introduzir insulina basal: <strong>NPH bedtime (22h)</strong> ou análogo de ação longa/ultralonga (em jejum ou bedtime)</li>
+      <li>Dose inicial: <strong>10 UI</strong> ou <strong>0,1–0,2 UI/kg</strong></li>
+      <li>Titulação: pela <strong>glicemia de jejum</strong></li>
+      <li>Aumentar 2 a 4 UI a cada 3 dias até atingir meta de glicemia de jejum ≤130 mg/dL</li>
+      <li>Ajuste da basal = pelas glicemias <strong>pré-prandiais</strong></li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-h">Passo 2 — Esquema Basal-Plus</div>
+    <ul class="pl">
+      <li>Introduzir insulina prandial antes da <strong>refeição mais copiosa do dia</strong> ou daquela após a qual a glicemia esteja fora da meta</li>
+      <li>Dose inicial: <strong>4 U/dia ou 10% da dose basal</strong></li>
+      <li>Titulação da prandial: pela glicemia <strong>2h após a refeição</strong> em que foi aplicada</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-h">Passo 3 — Esquema Basal-Bolus Pleno</div>
+    <ul class="pl">
+      <li>Insulina basal em dose plena (cobertura das 24h) + insulina prandial antes das 3 refeições principais</li>
+      <li>NPH: 2–3×/dia | Detemir: 1–2×/dia | Demais basais: 1×/dia</li>
+      <li>Basal 40–50% da DTD; restante dividido em 3 bolus pré-prandiais</li>
+    </ul>
+    <div class="co co-r" style="margin-top:10px">
+      <div class="co-lbl">⚠️ Regra de Ouro</div>
+      <p>1) Ajuste da insulina <strong>BASAL</strong> pelas glicemias <strong>PRÉ-PRANDIAIS</strong>. 2) Ajuste da insulina <strong>PRANDIAL</strong> pelas glicemias <strong>PÓS-PRANDIAIS</strong> ou pela glicemia prévia à próxima refeição.</p>
+    </div>
+  </div>
+
+  <div class="sl-lbl">5.10 Fenômenos Glicêmicos Noturnos</div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-h">Fenômeno do Alvorecer (Dawn Phenomenon)</div>
+      <p>Glicemias elevadas ao acordar por:</p>
+      <ul class="pl">
+        <li>↑GH durante o sono → ↑resistência insulínica</li>
+        <li>Pico de cortisol ~8h → ↑gliconeogênese hepática</li>
+      </ul>
+      <p style="margin-top:8px"><strong>Justifica:</strong> iniciar insulinoterapia com dose basal no bedtime (esquema bed time).</p>
+    </div>
+    <div class="card">
+      <div class="card-h">Efeito Somogyi</div>
+      <p>Hipoglicemia durante a madrugada (uso excessivo ou incorreto de insulina) → liberação de hormônios contrarreguladores → ↑gliconeogênese e glicogenólise → <strong>hiperglicemia ao amanhecer</strong>.</p>
+      <div class="co co-r" style="margin-top:8px">
+        <div class="co-lbl">⚠️ Diferencial</div>
+        <p><strong>Somogyi = único com HIPERGLICEMIA NA MADRUGADA</strong> (rebote por hipoglicemia prévia). Diferente do fenômeno do alvorecer (glicemia normal ou baixa na madrugada).</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TAB 6 — INSULINOTERAPIA COMPLETA
+═══════════════════════════════════════════════════════════ -->
+<div id="insulina" class="panel">
+  <div class="section-header">
+    <span class="section-icon">💉</span>
+    <h2 class="section-title">Insulinoterapia</h2>
+  </div>
+
+  <div class="co co-b">
+    <div class="co-lbl">Princípio Fundamental — SBD 2023</div>
+    <p>A insulinoterapia no DM1 deve <strong>mimetizar a secreção fisiológica de insulina</strong>. Estratégia de eleição: <strong>terapia basal-bolus</strong> via MDI (múltiplas doses diárias) ou SICI (bomba de infusão). 50% basal + 50% bolus. Dose inicial: 0,4–1,0 UI/kg/dia.</p>
+  </div>
+
+  <div class="sl-lbl">Tabela Mestre — Todas as Insulinas Disponíveis no Brasil</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Tipo</th><th>Nome/Marca</th><th>Início</th><th>Pico</th><th>Duração</th><th>Via/Observação</th></tr></thead>
+      <tbody>
+        <tr class="hl-b"><td colspan="6" style="background:#1e40af;color:#fff;font-weight:700;font-size:11px;letter-spacing:.5px">INSULINAS BASAIS</td></tr>
+        <tr><td>Intermediária</td><td><strong>NPH</strong> (Humulin N, Novolin N)</td><td>2–4h</td><td>4–10h</td><td>10–18h</td><td>Aspecto leitoso; agitar antes de usar</td></tr>
+        <tr><td>Análogo de Ação Longa</td><td><strong>Glargina U100</strong> (Lantus®, Basaglar®)</td><td>2–4h</td><td>Sem pico</td><td>20–24h</td><td>pH ácido; não misturar; 1×/dia</td></tr>
+        <tr><td>Análogo de Ação Intermediária</td><td><strong>Detemir</strong> (Levemir®)</td><td>1–3h</td><td>6–8h (leve)</td><td>18–22h</td><td>pH neutro; 1–2×/dia</td></tr>
+        <tr class="hl-p"><td>Análogo de Ação Ultralonga</td><td><strong>Glargina U300</strong> (Toujeo®)</td><td>6h</td><td>Sem pico</td><td>36h</td><td>Mais estável que U100; 1×/dia</td></tr>
+        <tr class="hl-p"><td>Análogo de Ação Ultralonga</td><td><strong>Degludeca</strong> (Tresiba®)</td><td>&lt;4h</td><td>Sem pico</td><td>42h</td><td>Maior flexibilidade de horário (intervalo 8–40h)</td></tr>
+        <tr class="hl-g"><td colspan="6" style="background:#15803d;color:#fff;font-weight:700;font-size:11px;letter-spacing:.5px">INSULINAS PRANDIAIS (BOLUS)</td></tr>
+        <tr><td>Rápida</td><td><strong>Regular</strong> (Humulin R, Novolin R)</td><td>30–60 min</td><td>2–3h</td><td>5–8h</td><td>Aplicar 20–30 min antes da refeição; transparente</td></tr>
+        <tr class="hl-b"><td rowspan="3">Análogo Ultrarrápido</td><td><strong>Asparte</strong> (Novorapid®)</td><td>5–15 min</td><td>30min–2h</td><td>3–5h</td><td>15 min pré-prandial; criança: pode ser pós</td></tr>
+        <tr class="hl-b"><td><strong>Lispro</strong> (Humalog®)</td><td>5–15 min</td><td>30–60 min</td><td>3–4h</td><td>15 min pré-prandial; criança: pode ser pós</td></tr>
+        <tr class="hl-b"><td><strong>Glulisina</strong> (Apidra®)</td><td>5–15 min</td><td>30–60 min</td><td>3–4h</td><td>15 min pré-prandial; criança: pode ser pós</td></tr>
+        <tr class="hl-b"><td>Análogo Ultrarápido Avançado</td><td><strong>Fiasp®</strong> (Fast-Acting Asparte)</td><td>2–5 min</td><td>1–3h</td><td>5h</td><td>Pico 11 min mais cedo que Asparte; pode ser até 20 min após início da refeição</td></tr>
+        <tr class="hl-a"><td>Inalável</td><td><strong>Afrezza®</strong> (Tecnosfera Inalável)</td><td>Imediato</td><td>10–20 min</td><td>1–2h</td><td>Somente adultos ≥18a; CI em DPOC/asma/fumantes; espirometria antes de iniciar</td></tr>
+        <tr style="background:#7f1d1d"><td colspan="6" style="background:#7f1d1d;color:#fff;font-weight:700;font-size:11px;letter-spacing:.5px">INSULINAS PRÉ-MISTURADAS</td></tr>
+        <tr><td>NPH/Regular</td><td>70% NPH/30% R (Humulin 70/30)</td><td>30min–1h</td><td>3–12h</td><td>10–16h</td><td>Uso limitado; controle individual difícil</td></tr>
+        <tr><td>NPL/Lispro</td><td>75% NPL/25% Lispro (Humalog Mix 25); 50% NPL/50% Lispro (Humalog Mix 50)</td><td>5–15 min</td><td>1–4h</td><td>10–16h</td><td></td></tr>
+        <tr><td>NPA/Asparte</td><td>70% NPA/30% Asparte (NovoMix 70/30)</td><td>5–15 min</td><td>1–4h</td><td>10–16h</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sl-lbl">Descrição Detalhada por Tipo de Insulina</div>
+
+  <!-- NPH -->
+  <div class="ic">
+    <div class="ic-hd">
+      <span class="ic-nm">NPH — Insulina Intermediária</span>
+      <div class="brow"><span class="tag tb">Basal</span><span class="tag tz">Insulina Humana</span></div>
+    </div>
+    <div class="ic-bd">
+      <div class="pk">
+        <div class="pk-i"><div class="pk-v">2–4h</div><div class="pk-l">Início</div></div>
+        <div class="pk-i"><div class="pk-v">4–10h</div><div class="pk-l">Pico</div></div>
+        <div class="pk-i"><div class="pk-v">10–18h</div><div class="pk-l">Duração</div></div>
+      </div>
+      <div class="g2">
+        <div>
+          <div class="ds-t">Composição e Características</div>
+          <ul class="pl">
+            <li>Insulina humana ligada a <strong>zinco + protamina</strong></li>
+            <li>Protamina reduz solubilidade → retarda absorção SC</li>
+            <li><strong>Aspecto leitoso</strong> — agitar cuidadosamente antes do uso para homogeneizar</li>
+          </ul>
+          <div class="ds-t">Esquemas de Uso (DM1 Basal-Bolus)</div>
+          <ul class="pl">
+            <li><strong>Opção 1:</strong> 2/3 antes do café + 1/3 bedtime</li>
+            <li><strong>Opção 2 (melhor):</strong> 1/3 café + 1/3 almoço + 1/3 bedtime</li>
+            <li><strong>DM2:</strong> 10 UI bedtime (22h) ou 0,1 UI/kg</li>
+          </ul>
+        </div>
+        <div>
+          <div class="ds-t">Cuidados Práticos</div>
+          <ul class="pl">
+            <li>Única via: <strong>subcutânea</strong></li>
+            <li>Se combinada com insulina rápida: <strong>sempre aspirar a regular ANTES da NPH</strong> (puxar água antes do leite)</li>
+            <li>Não contaminar o frasco da regular com protamina</li>
+            <li>NPH 2–3×/dia no esquema basal-bolus</li>
+          </ul>
+          <div class="ds-t">Limitações vs. Análogos</div>
+          <ul class="pl">
+            <li>Maior variabilidade glicêmica</li>
+            <li>Maior risco de hipoglicemia noturna vs. análogos longos</li>
+            <li>Evidência SBD: análogos DEVEM SER CONSIDERADOS em detrimento da NPH (R4 — Classe IIa, Nível B)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSULINA REGULAR -->
+  <div class="ic">
+    <div class="ic-hd">
+      <span class="ic-nm">Insulina Regular — Ação Rápida</span>
+      <div class="brow"><span class="tag tg">Bolus</span><span class="tag tz">Insulina Humana</span></div>
+    </div>
+    <div class="ic-bd">
+      <div class="pk">
+        <div class="pk-i"><div class="pk-v">30–60min</div><div class="pk-l">Início</div></div>
+        <div class="pk-i"><div class="pk-v">2–3h</div><div class="pk-l">Pico</div></div>
+        <div class="pk-i"><div class="pk-v">5–8h</div><div class="pk-l">Duração</div></div>
+      </div>
+      <div class="g2">
+        <div>
+          <div class="ds-t">Composição</div>
+          <ul class="pl">
+            <li>Insulina humana com cristais de zinco → hexâmetros → dissolve lentamente em monômeros absorvíveis</li>
+            <li>Aspecto <strong>transparente</strong></li>
+          </ul>
+          <div class="ds-t">Uso Clínico</div>
+          <ul class="pl">
+            <li>Aplicar <strong>20–30 min antes da refeição</strong></li>
+            <li>2–4×/dia; uso SC e também <strong>EV em crises hiperglicêmicas</strong></li>
+            <li>Contagem de carboidratos: RIC = 450/DDTI (regular) ou 400/DDTI (ultrarrápida)</li>
+          </ul>
+        </div>
+        <div>
+          <div class="ds-t">Nomes Comerciais</div>
+          <ul class="pl">
+            <li>Humulin R®, Novolin R®, Isuman R®, Wosulin R®</li>
+            <li>Canetas: Humulin R, Novolin R</li>
+          </ul>
+          <div class="ds-t">Uso Hospitalar</div>
+          <ul class="pl">
+            <li>Padrão no ambiente hospitalar (EV e SC)</li>
+            <li>Meta hospitalar não-crítico: 100–180 mg/dL</li>
+            <li><span class="tag tr">NUNCA usar sliding scale isolado</span> — padrão-ouro: basal-bolus</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ULTRARRÁPIDAS -->
+  <div class="ic">
+    <div class="ic-hd">
+      <span class="ic-nm">Análogos Ultrarrápidos — Asparte, Lispro, Glulisina</span>
+      <div class="brow"><span class="tag tg">Bolus</span><span class="tag tb">Análogos Ultrarrápidos</span><span class="tag tg">Preferidos no DM1</span></div>
+    </div>
+    <div class="ic-bd">
+      <div class="pk">
+        <div class="pk-i"><div class="pk-v">5–15min</div><div class="pk-l">Início</div></div>
+        <div class="pk-i"><div class="pk-v">30–60min</div><div class="pk-l">Pico</div></div>
+        <div class="pk-i"><div class="pk-v">3–5h</div><div class="pk-l">Duração</div></div>
+      </div>
+      <div class="g3">
+        <div>
+          <div class="ds-t">Lispro (Humalog®)</div>
+          <p>Inversão dos AA <strong>lisina (B29) e prolina (B28)</strong> → evita agregação → monômeros → absorção rápida SC.</p>
+          <p>Marcas: Humalog®, Humalog KwikPen®</p>
+        </div>
+        <div>
+          <div class="ds-t">Asparte (Novorapid®)</div>
+          <p>Substituição de <strong>prolina por ácido aspártico (B28)</strong> → carga negativa → monômeros. Farmacocinética similar à Lispro.</p>
+          <p>Marcas: Novorapid®, Novorapid Flexpen®</p>
+        </div>
+        <div>
+          <div class="ds-t">Glulisina (Apidra®)</div>
+          <p><strong>Asparagina→Lisina (B3)</strong> e <strong>Lisina→Ácido Glutâmico (B29)</strong>. Farmacocinética similar às demais ultrarrápidas.</p>
+          <p>Marcas: Apidra®, Solostar® (caneta)</p>
+        </div>
+      </div>
+      <div class="co co-b" style="margin-top:10px">
+        <div class="co-lbl">Aplicação e Timing</div>
+        <p>Aplicar <strong>15 min antes</strong> ou imediatamente pré-prandial. Em lactentes e pré-escolares com imprevisibilidade alimentar: pode ser aplicado <strong>após a refeição</strong>. Na vigência de hiperglicemia: sempre aplicar com antecedência. Recomendação SBD: <strong>R6 — Classe I, Nível A</strong> — preferir análogos rápidos/ultrarrápidos para reduzir risco de hipoglicemia.</p>
+      </div>
+      <div class="co co-g">
+        <div class="co-lbl">Evidência — SBD Meta-análise (18 ECRs)</div>
+        <p>Análogos ultrarrápidos vs. insulina regular em DM1: <strong>32% ↓hipoglicemia grave</strong> [RR 0,68]; <strong>45% ↓hipoglicemia noturna</strong> [RR 0,55].</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIASP -->
+  <div class="ic">
+    <div class="ic-hd">
+      <span class="ic-nm">Fiasp® — Fast-Acting Asparte (Asparte Ultrarrápida)</span>
+      <div class="brow"><span class="tag tp">Mais Rápida que Asparte</span><span class="tag tg">Bolus</span></div>
+    </div>
+    <div class="ic-bd">
+      <div class="pk">
+        <div class="pk-i"><div class="pk-v">2–5min</div><div class="pk-l">Início</div></div>
+        <div class="pk-i"><div class="pk-v">1–3h</div><div class="pk-l">Pico</div></div>
+        <div class="pk-i"><div class="pk-v">5h</div><div class="pk-l">Duração</div></div>
+      </div>
+      <ul class="pl">
+        <li>Asparte convencional + <strong>nicotinamida (vitamina B3)</strong> → absorção mais rápida</li>
+        <li>Início de ação <strong>5 min antes</strong> da Asparte comum; pico <strong>11 min mais cedo</strong></li>
+        <li>Pode ser aplicada imediatamente antes das refeições ou até <strong>20 min após seu início</strong></li>
+        <li>Indicada em SICI (bomba): pico 25 min mais cedo que Asparte convencional</li>
+        <li>Recomendação SBD: <strong>R8 — Classe IIb, Nível B</strong> — ultrarrápidas PODEM SER CONSIDERADAS após a refeição em caso de incerteza alimentar</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- AFREZZA -->
+  <div class="ic">
+    <div class="ic-hd">
+      <span class="ic-nm">Afrezza® — Insulina Inalável (Tecnosfera)</span>
+      <div class="brow"><span class="tag ta">Via Inalatória</span><span class="tag tg">Bolus</span></div>
+    </div>
+    <div class="ic-bd">
+      <div class="pk">
+        <div class="pk-i"><div class="pk-v">Imediato</div><div class="pk-l">Início</div></div>
+        <div class="pk-i"><div class="pk-v">10–20min</div><div class="pk-l">Pico</div></div>
+        <div class="pk-i"><div class="pk-v">1–2h</div><div class="pk-l">Duração</div></div>
+      </div>
+      <div class="g2">
+        <div>
+          <ul class="pl">
+            <li>Análogo por DNA recombinante — cápsulas inaláveis de 4 e 8 UI</li>
+            <li>Concentração máxima: 12–15 min (vs. 45–60 min da Asparte)</li>
+            <li>+2h de TIR vs. Asparte; ↓9 min/dia de hipoglicemia</li>
+            <li>↓Ganho de peso comparado a análogos injetáveis</li>
+            <li>Somente para <strong>adultos ≥18 anos</strong></li>
+          </ul>
+        </div>
+        <div>
+          <div class="ds-t">Contraindicações e Cuidados</div>
+          <ul class="pl">
+            <li><span class="tag tr">CI</span> Doença pulmonar crônica (asma, DPOC)</li>
+            <li><span class="tag tr">CI</span> Fumantes (ativos ou recentes)</li>
+            <li>Espirometria antes de iniciar; repetir em 6 meses e anualmente</li>
+            <li>Efeito adverso principal: <strong>tosse</strong> em ~1/3 dos pacientes (cede com suspensão)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GLARGINA U100 -->
+  <div class="ic">
+    <div class="ic-hd">
+      <span class="ic-nm">Glargina U100 — Ação Longa</span>
+      <div class="brow"><span class="tag tb">Basal</span><span class="tag tg">Sem Pico</span></div>
+    </div>
+    <div class="ic-bd">
+      <div class="pk">
+        <div class="pk-i"><div class="pk-v">2–4h</div><div class="pk-l">Início</div></div>
+        <div class="pk-i"><div class="pk-v">Sem pico</div><div class="pk-l">Pico</div></div>
+        <div class="pk-i"><div class="pk-v">20–24h</div><div class="pk-l">Duração</div></div>
+      </div>
+      <div class="g2">
+        <div>
+          <div class="ds-t">Composição e Mecanismo</div>
+          <ul class="pl">
+            <li>pH ácido (pH 4) → ao ser injetado SC torna-se pH neutro → microprecipitados → absorção lentificada</li>
+            <li>Asparagina→Glicina (A21); + 2 resíduos de arginina (B30)</li>
+            <li>Aplicação 1×/dia (café da manhã ou jantar)</li>
+            <li>Marcas: Lantus®, Basaglar®</li>
+          </ul>
+        </div>
+        <div>
+          <div class="ds-t">Vantagens vs. NPH</div>
+          <ul class="pl">
+            <li>↓Variabilidade glicêmica; ↓hipoglicemia noturna</li>
+            <li>Maior previsibilidade de ação</li>
+            <li>Recomendação SBD: <strong>R4 — Classe IIa, Nível B</strong></li>
+          </ul>
+          <div class="ds-t">Atenção</div>
+          <ul class="pl">
+            <li>Não misturar com outras insulinas (pH ácido incompatível)</li>
+            <li>Não pode ser usada EV</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DETEMIR -->
+  <div class="ic">
+    <div class="ic-hd">
+      <span class="ic-nm">Detemir — Análogo de Ação Intermediária/Longa</span>
+      <div class="brow"><span class="tag tb">Basal</span><span class="tag tz">Leve Pico</span></div>
+    </div>
+    <div class="ic-bd">
+      <div class="pk">
+        <div class="pk-i"><div class="pk-v">1–3h</div><div class="pk-l">Início</div></div>
+        <div class="pk-i"><div class="pk-v">6–8h</div><div class="pk-l">Pico (leve)</div></div>
+        <div class="pk-i"><div class="pk-v">18–22h</div><div class="pk-l">Duração</div></div>
+      </div>
+      <ul class="pl">
+        <li>Remoção lisina (B30) + adição de cadeia de <strong>ácido graxo à lisina (B29)</strong> → ligação à albumina → absorção prolongada</li>
+        <li>pH neutro; leve pico; duração menor que glargina</li>
+        <li>Aplicação 1–2×/dia; Marca: Levemir®</li>
+        <li>Evidência: menos hipoglicemia noturna vs. Glargina U100 (comparação direta)</li>
+        <li>Recomendação SBD: análogos de ação longa devem ser considerados em detrimento da NPH <strong>(R4 — Classe IIa, Nível B)</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- GLARGINA U300 -->
+  <div class="ic">
+    <div class="ic-hd">
+      <span class="ic-nm">Glargina U300 — Ação Ultralonga</span>
+      <div class="brow"><span class="tag tp">Ultralonga</span><span class="tag tg">Sem Pico</span></div>
+    </div>
+    <div class="ic-bd">
+      <div class="pk">
+        <div class="pk-i"><div class="pk-v">6h</div><div class="pk-l">Início</div></div>
+        <div class="pk-i"><div class="pk-v">Sem pico</div><div class="pk-l">Pico</div></div>
+        <div class="pk-i"><div class="pk-v">36h</div><div class="pk-l">Duração</div></div>
+      </div>
+      <ul class="pl">
+        <li>Eliminação treonina (B30) + adição de ácido graxo à lisina (B29)</li>
+        <li>Forma multi-hexâmeros SC → dissociação lenta → absorção contínua e plana</li>
+        <li>Maior estabilidade, sem pico, meia-vida mais prolongada</li>
+        <li>Aplicação 1×/dia; Marca: Toujeo®</li>
+        <li>Estudo EDITION 4: não-inferior à Glargina U100 em redução de HbA1c; ↓hipoglicemia noturna nas primeiras 8 semanas</li>
+        <li>Recomendação SBD: <strong>R5 — Classe I, Nível A</strong> — ultralongos PODEM SER CONSIDERADOS em risco aumentado de hipoglicemia</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DEGLUDECA -->
+  <div class="ic">
+    <div class="ic-hd">
+      <span class="ic-nm">Degludeca — Ação Ultralonga</span>
+      <div class="brow"><span class="tag tp">Ultralonga</span><span class="tag tg">Sem Pico</span><span class="tag tg">Maior Flexibilidade</span></div>
+    </div>
+    <div class="ic-bd">
+      <div class="pk">
+        <div class="pk-i"><div class="pk-v">&lt;4h</div><div class="pk-l">Início</div></div>
+        <div class="pk-i"><div class="pk-v">Sem pico</div><div class="pk-l">Pico</div></div>
+        <div class="pk-i"><div class="pk-v">42h</div><div class="pk-l">Duração</div></div>
+      </div>
+      <div class="g2">
+        <div>
+          <ul class="pl">
+            <li>Aplicação 1×/dia; Marca: Tresiba®</li>
+            <li>Maior meia-vida de todas as insulinas disponíveis</li>
+            <li>Estudo BEGIN Basal-Bolus Type 1: ↓25% hipoglicemia noturna vs. Glargina U100</li>
+            <li>Estudo SWITCH 1: ↓11% hipoglicemias sintomáticas; ↓36% noturnas; ↓35% graves vs. Glargina U100</li>
+          </ul>
+        </div>
+        <div>
+          <div class="ds-t">Flexibilidade de Horário (Estudo BEGIN Flex T1)</div>
+          <ul class="pl">
+            <li>Intervalo mínimo de <strong>8h</strong> e máximo de <strong>40h</strong> entre doses = segura e não-inferior ao uso em horário fixo</li>
+            <li>Util para pacientes com rotinas irregulares</li>
+          </ul>
+          <div class="ds-t">Coformulação</div>
+          <ul class="pl">
+            <li><strong>iDegLira:</strong> Degludeca + Liraglutida — recomendada em DM2 com obesidade que necessita TBI para minimizar ganho de peso</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SICI / BOMBA -->
+  <div class="ic">
+    <div class="ic-hd">
+      <span class="ic-nm">SICI — Sistema de Infusão Contínua de Insulina (Bomba)</span>
+      <div class="brow"><span class="tag tp">Padrão-Ouro Intensivo</span></div>
+    </div>
+    <div class="ic-bd">
+      <div class="g2">
+        <div>
+          <ul class="pl">
+            <li>Recomendação SBD: <strong>R9 — Classe I, Nível B</strong> — SICI RECOMENDADO quando MDI não obtém controle adequado</li>
+            <li>Padrão-ouro no tratamento intensivo; necessita equipe capacitada</li>
+            <li>Em crianças pequenas: pode ser a ÚNICA opção (doses &lt;0,5 UI necessárias, inviáveis em MDI)</li>
+            <li>SBD/ADA/ISPAD: SICI como principal forma terapêutica para crianças pequenas</li>
+          </ul>
+        </div>
+        <div>
+          <div class="ds-t">Evidência — COMISAIR Study</div>
+          <ul class="pl">
+            <li>MDI + CGM teve resultados semelhantes a SICI + CGM com melhor custo-benefício</li>
+            <li>CGM foi superior à glicemia capilar em reduzir hipoglicemia e HbA1c independente do método de infusão</li>
+          </ul>
+          <div class="ds-t">Insulinas usadas no SICI</div>
+          <ul class="pl">
+            <li>Asparte (Novorapid), Lispro (Humalog) ou Fiasp (preferível por farmacocinética superior em bomba)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl-lbl">Prescrição de Insulinoterapia no DM1 — Esquemas Práticos</div>
+
+  <div class="card">
+    <div class="card-h">Doses Iniciais por Fase e Faixa Etária</div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Paciente DM1</th><th>Dose Total Diária (UI/kg/dia)</th><th>Dose Basal (UI/kg/dia)</th></tr></thead>
+        <tbody>
+          <tr class="hl-g"><td>Diagnóstico recente / Lua de Mel</td><td>&lt;0,5</td><td>&lt;0,25</td></tr>
+          <tr><td>Após a remissão / adultos</td><td>0,7–1,0</td><td>0,3–0,5</td></tr>
+          <tr><td>Lactentes</td><td>0,3–0,5</td><td>0,1–0,2</td></tr>
+          <tr><td>Pré-púberes</td><td>0,5–0,8</td><td>0,2–0,4</td></tr>
+          <tr class="hl-r"><td>Púberes</td><td>0,8–2,0</td><td>0,4–1,0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:11.5px;color:var(--text2)">Distribuição: 40–50% basal; restante dividido em 3 bolus pré-prandiais. Em lactentes, manter basal em ~30% da DTD. Em adolescentes, basal pode chegar a 50–55%.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-h">Esquemas Basal-Bolus Práticos</div>
+    <div class="g3">
+      <div>
+        <div class="ds-t">Opção 1 — NPH</div>
+        <ul class="pl">
+          <li>NPH: 2/3 antes do café + 1/3 bedtime</li>
+          <li>Regular: 5 UI café + 5 UI almoço + 5 UI jantar</li>
+        </ul>
+      </div>
+      <div>
+        <div class="ds-t">Opção 2 — NPH (Melhor)</div>
+        <ul class="pl">
+          <li>NPH não depende de refeição: 1/3 café + 1/3 almoço + 1/3 bedtime</li>
+          <li>Regular/Ultrarrápida: 5 UI café + 5 UI almoço + 5 UI jantar</li>
+        </ul>
+      </div>
+      <div>
+        <div class="ds-t">Opção 3 — Análogo Longo</div>
+        <ul class="pl">
+          <li>Glargina/Degludeca: 15 UI bedtime ou antes do café</li>
+          <li>Ultrarrápida: 5 UI café + 5 UI almoço + 5 UI jantar</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h">Contagem de Carboidratos e Fator de Sensibilidade</div>
+    <div class="g2">
+      <div>
+        <div class="ds-t">Relação Insulina/Carboidrato (RIC)</div>
+        <ul class="pl">
+          <li>Quanto de CHO (g) 1 UI de insulina consegue metabolizar</li>
+          <li>Regular: <strong>RIC = 450 / DDTI</strong></li>
+          <li>Ultrarrápida: <strong>RIC = 400 / DDTI</strong></li>
+          <li>SBD: <strong>taxa de CHO = 400 / DTI</strong></li>
+          <li><em>Ex: DTD=50 UI; RIC = 450/50 = 9:1 → 9g CHO por 1 UI de regular</em></li>
+        </ul>
+        <p style="font-size:12px;font-weight:700;margin-top:6px">Bolus Prandial = CHO da refeição (g) ÷ RIC</p>
+      </div>
+      <div>
+        <div class="ds-t">Fator de Sensibilidade (FS) — Bolus Correção</div>
+        <ul class="pl">
+          <li>Quanto 1 UI de insulina reduz a glicemia (mg/dL)</li>
+          <li>Regular: <strong>FS = 1.500 / DDTI</strong></li>
+          <li>Ultrarrápida: <strong>FS = 1.800 / DDTI</strong></li>
+          <li>SBD: FS = 2.000/DTD (bebês: 2.100; adultos: 1.800)</li>
+          <li><em>Ex: FS=30 → cada UI de insulina reduz 30 mg/dL</em></li>
+        </ul>
+        <p style="font-size:12px;font-weight:700;margin-top:6px">Bolus Correção = (Glicemia Atual – Objetivo) ÷ FS</p>
+      </div>
+    </div>
+    <div class="co co-r" style="margin-top:8px">
+      <div class="co-lbl">⚠️ Cuidados no Ajuste — CORRIGIR UM DE CADA VEZ</div>
+      <ul class="pl">
+        <li>Para avaliar o bolus prandial: olhar o <strong>pós-prandial</strong>. PORÉM se o pré-prandial já estiver alto, a elevação pós-prandial pode ser falsamente maior — corrigir o pré-prandial ANTES</li>
+        <li><strong>SEMPRE corrigir uma variável de cada vez</strong></li>
+        <li>Basal: monitorar 3–4 dias seguidos antes de ajustar</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sl-lbl">Recomendações SBD 2023 — DM1 (Resumo com Força de Evidência)</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>#</th><th>Recomendação</th><th>Classe</th><th>Nível</th></tr></thead>
+      <tbody>
+        <tr class="hl-g"><td>R1</td><td>Iniciar insulina imediatamente após diagnóstico clínico do DM1</td><td>I</td><td>C</td></tr>
+        <tr class="hl-g"><td>R2</td><td>Usar esquemas que mimetizem a secreção fisiológica de insulina</td><td>I</td><td>C</td></tr>
+        <tr class="hl-g"><td>R3</td><td>Tratamento intensivo: basal-bolus com MDI ou SICI</td><td>I</td><td>B</td></tr>
+        <tr class="hl-a"><td>R4</td><td>Análogos de ação longa DEVEM SER CONSIDERADOS para insulinização basal (↓variabilidade, ↓hipo noturna vs. NPH)</td><td>IIa</td><td>B</td></tr>
+        <tr class="hl-g"><td>R5</td><td>Análogos ultralongos PODEM SER CONSIDERADOS em risco aumentado de hipoglicemia (↓hipo, ↑flexibilidade)</td><td>I</td><td>A</td></tr>
+        <tr class="hl-g"><td>R6</td><td>Usar análogos ultrarrápidos no bolus para ↓risco de hipoglicemia</td><td>I</td><td>A</td></tr>
+        <tr class="hl-g"><td>R7</td><td>Insulina prandial administrada ANTES de cada refeição</td><td>I</td><td>B</td></tr>
+        <tr class="hl-a"><td>R8</td><td>Ultrarrápidas PODEM SER CONSIDERADAS para aplicação pós-refeição em caso de incerteza alimentar</td><td>IIb</td><td>B</td></tr>
+        <tr class="hl-g"><td>R9</td><td>SICI como opção quando MDI não obtém controle adequado</td><td>I</td><td>B</td></tr>
+        <tr class="hl-g"><td>R10</td><td>Reavaliação periódica das doses para evitar inércia clínica</td><td>I</td><td>C</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sl-lbl">Metas Glicêmicas para DM1 em Insulinoterapia</div>
+  <div class="mg">
+    <div class="mc"><div class="mv">&lt;7%</div><div class="ml">HbA1c alvo DM1 (geral)</div></div>
+    <div class="mc"><div class="mv">&gt;70%</div><div class="ml">TIR 70–180 mg/dL em CGM</div></div>
+    <div class="mc"><div class="mv">&lt;4%</div><div class="ml">Tempo abaixo de 70 mg/dL</div></div>
+    <div class="mc"><div class="mv">110</div><div class="ml">Meta pré-prandial (mg/dL)</div></div>
+    <div class="mc"><div class="mv">160</div><div class="ml">Meta pós-prandial 2h (mg/dL)</div></div>
+    <div class="mc"><div class="mv">50/50</div><div class="ml">Distribuição Basal/Bolus (%)</div></div>
+  </div>
+
+  <div class="sl-lbl">Período de Lua de Mel (DM1)</div>
+  <div class="card">
+    <div class="card-h">Fisiopatologia e Manejo</div>
+    <ol class="sl">
+      <li class="si"><div class="sn">1</div><div class="sc"><p>Paciente em hiperglicemia (sem tratamento) → glicotoxicidade nas células beta → ↓produção de insulina</p></div></li>
+      <li class="si"><div class="sn">2</div><div class="sc"><p>Com início da insulinoterapia → normalização da glicemia → função pancreática residual aumenta temporariamente</p></div></li>
+      <li class="si"><div class="sn">3</div><div class="sc"><p>Resultado: necessidade de insulina cai significativamente → risco de hipoglicemias</p></div></li>
+    </ol>
+    <ul class="pl">
+      <li>Duração: pode durar <strong>6 meses a 1 ano</strong> após o diagnóstico</li>
+      <li>Conduta: usar <strong>doses mínimas</strong> de insulina; ajustar frequentemente</li>
+      <li>DTD típica na lua de mel: <strong>&lt;0,5 UI/kg/dia</strong></li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TAB 7 — ALGORITMO PRÁTICO
+═══════════════════════════════════════════════════════════ -->
+<div id="algoritmo" class="panel">
+  <div class="section-header">
+    <span class="section-icon">🔍</span>
+    <h2 class="section-title">Algoritmo Prático</h2>
+  </div>
+
+  <div class="sl-lbl">Avaliação Inicial — Checklist</div>
+  <ol class="sl">
+    <li class="si"><div class="sn">1</div><div class="sc"><strong>Estratificar Risco CV</strong><p>Baixo / Intermediário / Alto / Muito Alto. Verificar DCV estabelecida, IC, DRC.</p></div></li>
+    <li class="si"><div class="sn">2</div><div class="sc"><strong>Avaliar IMC e Obesidade</strong><p>Sobrepeso com HbA1c ≥7,5% → terapia dupla desde o início. Obesidade grave → AR GLP-1 ou Tirzepatida.</p></div></li>
+    <li class="si"><div class="sn">3</div><div class="sc"><strong>Avaliar TFG, IC e Comorbidades</strong><p>TFG orienta cada classe; IC contraindica Pioglitazona e favorece iSGLT2; IH limita Metformina.</p></div></li>
+    <li class="si"><div class="sn">4</div><div class="sc"><strong>Avaliar Sintomatologia</strong><p>Paciente com poliúria, polidipsia, perda de peso → iniciar terapia baseada em insulina imediatamente.</p></div></li>
+  </ol>
+
+  <div class="sl-lbl">Algoritmo Decisório por Perfil Clínico</div>
+
+  <div class="fb dec">🔍 Passo 1: Risco CV?</div>
+  <div class="fg">
+    <div>
+      <div class="fb act"><strong>Baixo/Intermediário</strong><br>→ Metformina como base<br>HbA1c ≥7,5%: + iSGLT2 ou GLP-1/TZP</div>
+    </div>
+    <div>
+      <div class="fb warn"><strong>Alto/Muito Alto</strong><br>→ iSGLT2 ou AR GLP-1 como AD1<br>Independente de HbA1c</div>
+    </div>
+  </div>
+  <div class="fa">↓</div>
+  <div class="fb dec">🔍 Passo 2: IC ou DRC?</div>
+  <div class="fg">
+    <div class="fb good">IC: iSGLT2 → proteção cardiorrenal<br>Pioglitazona: CONTRAINDICADA (ICC III-IV)</div>
+    <div class="fb good">DRC leve/moderada: iSGLT2 (dapa ≥25; empa ≥20) + IECA/BRA para PA<br>DRC grave (TFG &lt;20): Insulina</div>
+  </div>
+  <div class="fa">↓</div>
+  <div class="fb dec">🔍 Passo 3: Meta não atingida após 3–6 meses?</div>
+  <div class="fb act">Intensificar: Dupla → Tripla → Quádrupla. Associação iSGLT2 + AR GLP-1 para potenciar efeito cardiorrenal e ponderal.</div>
+  <div class="fa">↓</div>
+  <div class="fb warn">Quádrupla sem controle → Insulina Basal-Bolus ou Coformulação (iDegLira)</div>
+
+  <div class="sl-lbl">Ajuste de Dosagem por TFG — Tabela de Bolso</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Classe</th><th>Agente</th><th>TFG &gt;90</th><th>TFG 59–45</th><th>TFG 44–30</th><th>TFG 29–15</th><th>TFG &lt;15</th></tr></thead>
+      <tbody>
+        <tr><td>Biguanidas</td><td>Metformina</td><td colspan="2">0,5–2 g/dia</td><td colspan="2">Até 1 g/dia</td><td class="hl-r">Evitar TFG &lt;30</td></tr>
+        <tr><td>Sulfonilureias</td><td>Gliclazida MR</td><td colspan="3">30–120 mg/dia</td><td colspan="2">Exp. Limitada TFG &lt;30</td></tr>
+        <tr><td>Glitazonas</td><td>Pioglitazona</td><td colspan="4">15–45 mg/dia</td><td>Exp. Limitada TFG &lt;15</td></tr>
+        <tr class="hl-b"><td>iSGLT2</td><td>Dapagliflozina</td><td colspan="3">10 mg/dia</td><td>10 mg/dia (≥25)</td><td>Exp. Limitada &lt;25</td></tr>
+        <tr class="hl-b"><td>iSGLT2</td><td>Empagliflozina</td><td colspan="3">10–25 mg/dia</td><td>10 mg/dia (≥20)</td><td>Exp. Limitada &lt;20</td></tr>
+        <tr><td>AR GLP-1</td><td>Liraglutida</td><td colspan="3">0,6–1,8 mg/dia</td><td>Evitar se TFG &lt;45</td><td>CI TFG &lt;15</td></tr>
+        <tr><td>AR GLP-1</td><td>Semaglutida SC</td><td colspan="3">0,25–1 mg/sem</td><td colspan="2">Exp. Limitada TFG &lt;15</td></tr>
+        <tr><td>Insulinas</td><td>Todas</td><td>Manter dose</td><td colspan="3">Reduzir dose em 25%</td><td>Reduzir 25–50%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TAB 8 — ERROS E PEGADINHAS
+═══════════════════════════════════════════════════════════ -->
+<div id="erros" class="panel">
+  <div class="section-header">
+    <span class="section-icon">⚠️</span>
+    <h2 class="section-title">Erros e Pegadinhas</h2>
+  </div>
+
+  <div class="co co-r">
+    <div class="co-lbl">⚠️ Erro 1 — Pioglitazona na Internação por Descompensação de IC</div>
+    <p>Prescrever Pioglitazona em paciente que interna por exacerbação de IC = <strong>contraindicação grave (NYHA III e IV)</strong>. Causa retenção hídrica e piora aguda da IC.</p>
+  </div>
+
+  <div class="co co-r">
+    <div class="co-lbl">⚠️ Erro 2 — Sulfonilureia em Paciente Internado em Jejum</div>
+    <p>Glibenclamida/Gliclazida em idosos internados em jejum para exames = <strong>hipoglicemias letais</strong>. Correto: suspender SU + usar insulina em doses fracionadas durante toda a internação.</p>
+  </div>
+
+  <div class="co co-r">
+    <div class="co-lbl">⚠️ Erro 3 — Sliding Scale (Escala Corretiva) Isolada no Hospital</div>
+    <p>Uso exclusivo de esquema de correção por escala móvel = <strong>PROIBIDO</strong> como monoterapia. Gera variação glicêmica grave. Padrão-ouro: basal-bolus. Meta hospitalar não-crítico: 100–180 mg/dL.</p>
+  </div>
+
+  <div class="co co-r">
+    <div class="co-lbl">⚠️ Erro 4 — Ajuste Incorreto da Insulina Basal</div>
+    <p>Ajustar glargina da noite pela glicemia pós-almoço = <strong>erro clássico de prova</strong>. Para a insulina da noite, o parâmetro correto é a <strong>glicemia de jejum da manhã seguinte</strong>. Prandial é ajustado pelo pós-prandial da refeição correspondente.</p>
+  </div>
+
+  <div class="co co-r">
+    <div class="co-lbl">⚠️ Erro 5 — Não Suspender iSGLT2 Pré-operatório</div>
+    <p>Manter glifozina até véspera de cirurgia = risco de <strong>cetoacidose euglicêmica intraoperatória</strong>. Suspender <strong>24–72h antes</strong> obrigatoriamente. O mesmo vale para adoecimento agudo.</p>
+  </div>
+
+  <div class="co co-r">
+    <div class="co-lbl">⚠️ Erro 6 — DPP-4 + AR GLP-1 Simultâneos</div>
+    <p>Gliptinas e análogos do GLP-1 atuam na <strong>mesma via</strong>. Combinação é ineficaz e não recomendada. Escolher apenas uma das classes.</p>
+  </div>
+
+  <div class="co co-a">
+    <div class="co-lbl">🎯 Armadilha — Monofilamento como Rastreio de Neuropatia</div>
+    <p><strong>Monofilamento 10g NÃO é rastreio de neuropatia</strong> — ele avalia risco de pé diabético. O rastreio de neuropatia é: teste doloroso + teste térmico + teste vibratório (1×/ano).</p>
+  </div>
+
+  <div class="co co-a">
+    <div class="co-lbl">🎯 Armadilha — Cetonúria Falsamente Normal com iSGLT2</div>
+    <p>iSGLT2 ↑reabsorção tubular de acetoacetato → cetonúria pode ser <strong>falsamente negativa</strong> na eCAD. Sempre preferir <strong>cetonemia capilar</strong> quando disponível.</p>
+  </div>
+
+  <div class="co co-a">
+    <div class="co-lbl">🎯 Armadilha — Fenômeno Somogyi vs. Alvorecer</div>
+    <p>Ambos causam hiperglicemia matinal, mas mecanismos opostos. <strong>Somogyi</strong>: hipoglicemia na madrugada → rebote hiperglicêmico (checar glicemia às 3h). <strong>Alvorecer</strong>: resistência insulínica fisiológica noturna por GH e cortisol (glicemia normal/baixa às 3h).</p>
+  </div>
+
+  <div class="sl-lbl">Tabela de Contraindicações Cruzadas</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Situação Clínica</th><th>Droga Contraindicada</th><th>Preferência</th></tr></thead>
+      <tbody>
+        <tr class="hl-r"><td>ICC NYHA III–IV</td><td>Pioglitazona</td><td>iSGLT2</td></tr>
+        <tr class="hl-r"><td>TFG &lt;30</td><td>Metformina, Sulfonilureia (glibenclamida), Acarbose</td><td>iSGLT2 (ajuste), AR GLP-1, insulina</td></tr>
+        <tr><td>TFG &lt;15</td><td>AR GLP-1</td><td>Insulina</td></tr>
+        <tr class="hl-r"><td>DM1</td><td>iSGLT2 (NUNCA)</td><td>Insulina obrigatória</td></tr>
+        <tr><td>CMT / Hx familiar CMT</td><td>AR GLP-1</td><td>iSGLT2, Metformina</td></tr>
+        <tr><td>Jejum / Cirurgia / Adoecimento</td><td>iSGLT2 (suspender 24–72h antes)</td><td>Insulina SC ou EV</td></tr>
+        <tr class="hl-r"><td>Idoso internado em jejum</td><td>Sulfonilureias</td><td>Insulina basal-bolus</td></tr>
+        <tr><td>Osteoporose / pós-menopausa</td><td>Pioglitazona (risco de fratura)</td><td>Outra classe</td></tr>
+        <tr><td>Pancreatite anterior</td><td>AR GLP-1 (relativa); DPP-4 (risco)</td><td>Metformina, iSGLT2</td></tr>
+        <tr><td>Em uso de AR GLP-1</td><td>DPP-4 (mesma via — ineficaz)</td><td>iSGLT2 para associação</td></tr>
+        <tr><td>Gravidez</td><td>Metformina relativa; Pioglitazona; Sulfonilureias</td><td>Insulina (única comprovada segura)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TAB 9 — REVISÃO RÁPIDA
+═══════════════════════════════════════════════════════════ -->
+<div id="revisao" class="panel">
+  <div class="section-header">
+    <span class="section-icon">📝</span>
+    <h2 class="section-title">Revisão Rápida</h2>
+  </div>
+
+  <div class="co co-a">
+    <div class="co-lbl">🎯 Revisão de Prova — Alta Densidade</div>
+    <p>Os pontos abaixo são os mais cobrados e impactantes clinicamente.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-h">Checklist Completo — Antidiabéticos</div>
+    <ul class="ck">
+      <li><strong>Metformina:</strong> 1ª linha no baixo/médio risco CV. Suspender se TFG &lt;30. Rastrear B12 após 4 anos. NÃO gera hipoglicemia. CI: IR grave, ICC III-IV, IH, IR respiratória.</li>
+      <li><strong>Pioglitazona:</strong> CI em ICC III/IV, IH, Gestação, Osteoporose, Edema macular. 1ª linha DHEM. Risco de fratura em pós-menopausa. NÃO gera hipoglicemia.</li>
+      <li><strong>iSGLT2:</strong> 1ª linha em alto risco CV, IC, DRC. NUNCA em DM1. Suspender 24–72h antes de cirurgia. Dapa: iniciar ≥25, manter até diálise. Empa: iniciar ≥20. Risco de eCAD.</li>
+      <li><strong>AR GLP-1:</strong> 1ª linha em alto risco CV e obesidade. CI: CMT, TFG &lt;15, Pancreatite. Não combinar com DPP-4. Tirzepatida (GIP+GLP-1) superior em perda de peso.</li>
+      <li><strong>DPP-4 (Gliptinas):</strong> Não gera hipoglicemia, não afeta peso. Saxagliptina/Alogliptina: risco de IC. Não combinar com AR GLP-1.</li>
+      <li><strong>Sulfonilureias:</strong> GERA hipoglicemia. CI: TFG &lt;30, IH, Gestação, Infecções graves. SUSPENDER na internação. Glibenclamida: pior opção em idosos.</li>
+      <li><strong>Alto Risco CV:</strong> Prescrever iSGLT2 ou AR GLP-1 como AD1 independente de HbA1c ou uso prévio de metformina.</li>
+      <li><strong>IC + DRC:</strong> iSGLT2 são os protetores de órgão-alvo de escolha.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-h">Checklist — Insulinoterapia</div>
+    <ul class="ck">
+      <li><strong>DM2 início:</strong> NPH bedtime 10 UI ou 0,1–0,2 UI/kg. Titular pela glicemia de jejum. Aumentar 2–4 UI a cada 3 dias.</li>
+      <li><strong>Esquema Basal-Bolus:</strong> 40–50% basal + 50–60% dividido em 3 bolus pré-prandiais. DTD inicial DM1: 0,5–1 UI/kg/dia.</li>
+      <li><strong>Ajuste Basal:</strong> pela glicemia PRÉ-PRANDIAL. Ajuste PRANDIAL: pela glicemia PÓS-PRANDIAL.</li>
+      <li><strong>NPH → sempre aspirar REGULAR ANTES (puxar água antes do leite).</strong> NPH tem aspecto leitoso — agitar antes de usar.</li>
+      <li><strong>Análogos longos &gt; NPH:</strong> ↓variabilidade, ↓hipoglicemia noturna (Classe IIa, Nível B). Degludeca: maior flexibilidade de horário.</li>
+      <li><strong>Glicemia Hospitalar:</strong> Meta 100–180 mg/dL. Sliding scale isolado = PROIBIDO. Usar basal-bolus.</li>
+      <li><strong>Insulina Regular:</strong> RIC = 450/DDTI; FS = 1.500/DDTI. Ultrarrápida: RIC = 400; FS = 1.800.</li>
+      <li><strong>Fase Lua de Mel (DM1):</strong> DTD &lt;0,5 UI/kg. Dura 6 meses a 1 ano. Usar doses mínimas.</li>
+    </ul>
+  </div>
+
+  <div class="sl-lbl">Tabela Final — Metas Glicêmicas por Contexto</div>
+  <div class="mg">
+    <div class="mc"><div class="mv">&lt;7%</div><div class="ml">HbA1c — DM geral</div></div>
+    <div class="mc"><div class="mv">&lt;7,5%</div><div class="ml">HbA1c — Idoso saudável</div></div>
+    <div class="mc"><div class="mv">&lt;8%</div><div class="ml">HbA1c — Idoso frágil</div></div>
+    <div class="mc"><div class="mv">&gt;70%</div><div class="ml">TIR 70–180 mg/dL</div></div>
+    <div class="mc"><div class="mv">&lt;4%</div><div class="ml">Tempo abaixo 70 mg/dL</div></div>
+    <div class="mc"><div class="mv">100–180</div><div class="ml">Meta glicêmica hospitalar</div></div>
+    <div class="mc"><div class="mv">80–130</div><div class="ml">Jejum/Pré-prandial (mg/dL)</div></div>
+    <div class="mc"><div class="mv">&lt;180</div><div class="ml">Pós-prandial 2h (mg/dL)</div></div>
+  </div>
+
+  <div class="dir">
+    <div class="dir-lbl">📌 5 Atualizações SBD 2025 que Caem em Prova</div>
+    <div class="dir-item">
+      <div class="dir-t">1. Metformina não é mais AD1 universal</div>
+      <p>iSGLT2 e AR GLP-1 são 1ª linha em alto risco CV, IC e DRC — independente da HbA1c e do uso prévio de metformina.</p>
+    </div>
+    <div class="dir-item">
+      <div class="dir-t">2. Novos limiares de TFG para iSGLT2</div>
+      <p>Dapagliflozina: iniciar ≥TFG 25; Empagliflozina: iniciar ≥TFG 20. Ambas: manter até entrada em diálise.</p>
+    </div>
+    <div class="dir-item">
+      <div class="dir-t">3. Tirzepatida (Coagonista GIP/GLP-1)</div>
+      <p>Alta recomendação em DM2 com obesidade. Eficácia superior a GLP-1 puro em redução de peso. Pode substituir cirurgia bariátrica.</p>
+    </div>
+    <div class="dir-item">
+      <div class="dir-t">4. Pioglitazona = 1ª linha na DHEM (antiga DHGNA)</div>
+      <p>Tratamento de esteato-hepatite e fibrose hepática em DM2, mesmo sem contraindication cardíaca.</p>
+    </div>
+    <div class="dir-item">
+      <div class="dir-t">5. Suspensão Obrigatória de iSGLT2</div>
+      <p>24–72h antes de cirurgias/procedimentos invasivos. Proativamente se cetonemia &gt;1,5 mmol/L em adoecimento agudo.</p>
+    </div>
+  </div>
+
+</div>
+
+
+</div><!-- /wrap -->
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// Highlight active section in TOC on scroll
+const sections = document.querySelectorAll('.panel');
+const tocLinks = document.querySelectorAll('.toc-item');
+const backTop = document.getElementById('backTop');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.dataset.target === id);
+      });
+      // Scroll active link into view in TOC bar
+      const activeLink = document.querySelector(`.toc-item[data-target="${id}"]`);
+      if (activeLink) {
+        activeLink.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+      }
+    }
+  });
+}, {
+  rootMargin: '-80px 0px -60% 0px',
+  threshold: 0
+});
+
+sections.forEach(s => observer.observe(s));
+
+// Back to top button visibility
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('show', window.scrollY > 400);
+});
+
+// Smooth scroll for TOC links
+tocLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.getElementById(link.dataset.target);
+    if (target) {
+      const offset = 80;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({top, behavior:'smooth'});
+    }
+  });
+});
+</script>
+</body>
+</html>
