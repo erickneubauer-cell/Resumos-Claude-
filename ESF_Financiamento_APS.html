@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESF II — Financiamento e Programas Especiais</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#fff;color:#1a1a1a}
+.page{max-width:900px;margin:0 auto;padding:1.25rem 1rem}
+.page-title{font-size:20px;font-weight:600;color:#1a1a1a;padding-bottom:0.75rem;border-bottom:0.5px solid #e0e0e0;margin-bottom:0.25rem}
+.page-sub{font-size:12px;color:#888;margin-bottom:1.25rem}
+.nav{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1.5rem}
+.nav-btn{font-size:11.5px;padding:5px 12px;border-radius:20px;border:0.5px solid #d0d0d0;background:#fff;color:#555;cursor:pointer;transition:all 0.15s;white-space:nowrap}
+.nav-btn:hover{background:#f0f4ff;border-color:#5b7fe8;color:#3a5cd0}
+.nav-btn.active{background:#eef1fd;border-color:#5b7fe8;color:#3a5cd0;font-weight:500}
+.sec{display:none}
+.sec.open{display:block}
+.card{background:#fff;border:0.5px solid #e0e0e0;border-radius:12px;padding:1rem 1.25rem;margin-bottom:0.75rem}
+.label{font-size:11px;color:#999;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem}
+.body-text{font-size:13.5px;color:#1a1a1a;line-height:1.75}
+.muted{font-size:13px;color:#555;line-height:1.7}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;font-weight:600;color:#555;padding:7px 10px;border-bottom:0.5px solid #e0e0e0;background:#f7f7f7}
+td{padding:7px 10px;border-bottom:0.5px solid #f0f0f0;color:#1a1a1a;vertical-align:top;line-height:1.5}
+tr:last-child td{border-bottom:none}
+.tr-blue td{background:#EDF3FC}
+.divider{border:none;border-top:0.5px solid #efefef;margin:0.85rem 0}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:4px;margin:2px;font-weight:500;line-height:1.6}
+.tr{background:#FDECEA;color:#B71C1C}
+.ta{background:#FFF8E1;color:#7B5800}
+.tg{background:#E8F5E9;color:#1B5E20}
+.tb{background:#E3F2FD;color:#0D47A1}
+.tp{background:#EDE7F6;color:#4527A0}
+.tz{background:#F1EFE8;color:#4a4a44}
+.callout{border-left:3px solid;padding:0.75rem 1rem;margin:0.5rem 0;font-size:13px;line-height:1.7;border-radius:0 8px 8px 0}
+.cb{border-color:#5b7fe8;background:#EEF1FD;color:#1a3a8f}
+.ca{border-color:#F5A623;background:#FFF8E1;color:#7B5800}
+.cr{border-color:#E53935;background:#FDECEA;color:#B71C1C}
+.cg{border-color:#43A047;background:#E8F5E9;color:#1B5E20}
+.cp{border-left:3px solid #7c6af7;background:#EDE7F6;border-radius:0 8px 8px 0;padding:0.85rem 1rem;margin-top:0.6rem}
+.cp .cp-label{font-size:11px;font-weight:600;color:#4527A0;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:0.4rem}
+.cp .cp-body{font-size:13px;color:#311B92;line-height:1.75}
+.cp .cp-body strong{color:#1a0066}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem}
+.metric{background:#f7f7f7;border-radius:8px;padding:0.75rem 1rem;text-align:center}
+.metric-val{font-size:22px;font-weight:700;color:#3a5cd0}
+.metric-lbl{font-size:11px;color:#888;margin-top:3px;line-height:1.4}
+.step-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:0.65rem}
+.step-n{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#EEF1FD;color:#3a5cd0;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px}
+ul.bl{padding-left:1.25rem}
+ul.bl li{font-size:13px;color:#1a1a1a;line-height:1.7;margin-bottom:3px}
+.checklist{list-style:none;padding:0}
+.checklist li{font-size:13px;color:#1a1a1a;line-height:1.7;padding:6px 0;display:flex;gap:8px;align-items:flex-start;border-bottom:0.5px solid #f5f5f5}
+.checklist li:last-child{border-bottom:none}
+.checklist li::before{content:"☐";color:#aaa;flex-shrink:0;margin-top:1px}
+.badge-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:0.4rem}
+.sub-label{font-size:12px;font-weight:600;color:#333;margin:0.6rem 0 0.3rem}
+@media(max-width:600px){.two-col,.three-col{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="page-title">ESF II — Financiamento e Programas Especiais da APS</div>
+<p class="page-sub">MEDCOF · Clínica Médica / Medicina de Família · Portaria GM/MS nº 3.493/2024 (vigente)</p>
+
+<div class="nav">
+  <button class="nav-btn active" onclick="show('visao')">1. Visão Geral</button>
+  <button class="nav-btn" onclick="show('marcos')">2. Marcos Históricos</button>
+  <button class="nav-btn" onclick="show('estrutura')">3. Estrutura 2024</button>
+  <button class="nav-btn" onclick="show('vinculo')">4. Vínculo e Território</button>
+  <button class="nav-btn" onclick="show('qualidade')">5. Qualidade</button>
+  <button class="nav-btn" onclick="show('outros')">6. Outros Componentes</button>
+  <button class="nav-btn" onclick="show('algo')">7. Algoritmo</button>
+  <button class="nav-btn" onclick="show('erros')">8. Erros e Pegadinhas</button>
+</div>
+
+<!-- 1. VISÃO GERAL -->
+<div id="sec-visao" class="sec open">
+  <div class="card">
+    <div class="label">O que é</div>
+    <ul class="bl">
+      <li>Modelo de <strong>financiamento federal</strong> da APS no SUS — o dinheiro que chega à APS também tem influência de aspectos estaduais e municipais</li>
+      <li>Contexto: transição do <strong>Previne Brasil (2019)</strong> para a <strong>Nova Metodologia de Cofinanciamento</strong></li>
+      <li>Base legal: Portaria GM/MS nº <strong>3.493/2024</strong></li>
+      <li>Foco do estudo: <strong>6 componentes</strong> do cofinanciamento (fixos, vínculo/acompanhamento, qualidade e programas)</li>
+    </ul>
+    <hr class="divider">
+    <div class="label">Objetivo do bloco</div>
+    <ul class="bl">
+      <li>Consolidar a <strong>evolução histórica</strong> do custeio da APS</li>
+      <li>Dominar as <strong>regras de cálculo</strong>, <strong>metas</strong> e <strong>indicadores</strong> do cofinanciamento vigente</li>
+      <li>Maximizar os <strong>repasses federais</strong> aos municípios, respeitando a normativa atual</li>
+    </ul>
+  </div>
+  <div class="callout cr">
+    <strong>⚠️ Ponto de prova:</strong><br>
+    · O Previne Brasil foi <strong>completamente revogado</strong> pela Portaria GM/MS nº 3.493/2024.<br>
+    · Nomenclaturas como <strong>"Capitação Ponderada"</strong> e <strong>"Pagamento por Desempenho"</strong> não têm mais lastro legal.<br>
+    · Nunca trate o Previne Brasil como modelo atual.
+  </div>
+  <div class="callout ca" style="margin-top:0.5rem">
+    🎯 <strong>High-yield (R1):</strong><br>
+    · <strong>NOB 01/96</strong> → PAB Fixo + Variável<br>
+    · <strong>Portaria 2.979/2019</strong> → Previne Brasil (<strong>extinto</strong>)<br>
+    · <strong>Portaria 3.493/2024</strong> → Novo Cofinanciamento (<strong>vigente</strong>)
+  </div>
+</div>
+
+<!-- 2. MARCOS HISTÓRICOS -->
+<div id="sec-marcos" class="sec">
+  <div class="card" style="overflow-x:auto;margin-bottom:0.75rem">
+    <div class="label">2.1 Linha do tempo</div>
+    <table>
+      <thead><tr><th>Ano</th><th>Marco</th><th>Principais características</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag tz">1996</span></td><td><strong>NOB 01/96 — PAB</strong></td><td>PAB Fixo (per capita para eSF) + PAB Variável (programas estratégicos: Saúde Bucal, ACS etc.)</td></tr>
+        <tr><td><span class="tag ta">2019</span></td><td><strong>Previne Brasil (2.979/2019)</strong></td><td>Extinção do PAB. Eixos: capitação ponderada, pagamento por desempenho, incentivo estratégico. Crítica: priorizou volume de cadastros, reduziu foco territorial.</td></tr>
+        <tr class="tr-blue"><td><span class="tag tb">2024</span></td><td><strong>Novo Cofinanciamento (3.493/2024) ★</strong></td><td>Revoga integralmente o Previne Brasil. Retoma territorialização e vínculo. 6 componentes: Fixo, Vínculo, Qualidade, Programas, Saúde Bucal e Per capita.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="margin-bottom:0.75rem">
+    <div class="label">2.2 PAB — Piso da Atenção Básica</div>
+    <ul class="bl" style="margin-bottom:0.6rem">
+      <li>Criado pela <strong>NOB 96</strong> e implantado em <strong>1998</strong></li>
+      <li>Inaugura a <strong>descentralização</strong> de recursos federais para a saúde</li>
+    </ul>
+    <div class="two-col">
+      <div>
+        <p class="sub-label">PAB Fixo</p>
+        <p class="muted">Valor <strong>per capita</strong> aos municípios, com base na população do censo IBGE — fixo conforme quantidade de pessoas.</p>
+      </div>
+      <div>
+        <p class="sub-label">PAB Variável</p>
+        <p class="muted">Varia conforme adesão e execução de programas prioritários do SUS. Ex: eSF, Saúde Bucal, NASF.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:0.75rem">
+    <div class="label">2.3 Componentes do Previne Brasil (histórico — extinto)</div>
+    <p class="sub-label">2.3.1 Capitação ponderada</p>
+    <ul class="bl" style="margin-bottom:0.6rem">
+      <li>Base de cálculo: número de pessoas cadastradas</li>
+      <li>Efeito prático: premiava <strong>volume irrestrito</strong> de cadastros</li>
+    </ul>
+    <p class="sub-label">2.3.2 Pagamento por desempenho — 7 indicadores</p>
+    <ul class="bl" style="margin-bottom:0.6rem">
+      <li>Gestantes ≥ 6 consultas pré-natal (1ª até 12ª semana)</li>
+      <li>Gestantes: Sífilis e HIV</li>
+      <li>Gestantes: Atendimento odontológico</li>
+      <li>Coleta de citopatológico</li>
+      <li>Vacinação pentavalente + pólio em crianças de 1 ano</li>
+      <li>Hipertensos com PA aferida no semestre</li>
+      <li>Diabéticos com HbA1c no semestre</li>
+    </ul>
+    <p class="sub-label">2.3.3 Incentivos estratégicos</p>
+    <p class="muted" style="margin-bottom:0.3rem">Lógica: a oferta desses serviços aumentava os repasses.</p>
+    <div class="badge-row" style="margin-bottom:0.6rem">
+      <span class="tag tz">Saúde na Hora</span><span class="tag tz">eSB</span><span class="tag tz">Consultório na Rua</span><span class="tag tz">UBS Fluvial</span><span class="tag tz">eSF Ribeirinha</span><span class="tag tz">Microscopista</span><span class="tag tz">eABP (Prisional)</span><span class="tag tz">PSE</span><span class="tag ta">Academia da Saúde → agora IAF</span>
+    </div>
+    <p class="sub-label">2.3.4 Incentivos com base em critérios populacionais</p>
+    <ul class="bl">
+      <li><strong>Retomada do per capita (base populacional):</strong> retorno de uma transferência per capita (lógica do PAB Fixo)</li>
+      <li><strong>Justificativa prática:</strong> durante a pandemia, o repasse baseado apenas em cadastros não era suficiente para sustentar os custos da APS</li>
+    </ul>
+  </div>
+
+  <div class="card" style="overflow-x:auto">
+    <div class="label">2.5 Comparativo — Previne Brasil vs. Novo Cofinanciamento</div>
+    <table>
+      <thead><tr><th>Previne Brasil (2.979/2019)</th><th>Novo Cofinanciamento (3.493/2024)</th></tr></thead>
+      <tbody>
+        <tr><td>Capitação Ponderada</td><td>Componente Fixo / Equidade (implantação e manutenção)</td></tr>
+        <tr><td>Pagamento por Desempenho</td><td>Componente de Vínculo e Acompanhamento Territorial</td></tr>
+        <tr><td>Incentivo para Ações Estratégicas</td><td>Componente Qualidade</td></tr>
+        <tr><td>—</td><td>Implantação e manutenção de programas e equipes</td></tr>
+        <tr><td>—</td><td>Atenção à Saúde Bucal</td></tr>
+        <tr class="tr-blue"><td>—</td><td>Per capita de base populacional para ações na APS</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 3. ESTRUTURA 2024 -->
+<div id="sec-estrutura" class="sec">
+  <div class="callout cb" style="margin-bottom:0.75rem">
+    <strong>Definição:</strong> O novo modelo leva conceitos de <strong>vulnerabilidade</strong> para definição do repasse. Base: Portaria 3.493/2024 + atualizações de 2025.
+  </div>
+
+  <div class="card" style="margin-bottom:0.75rem">
+    <div class="label">3.1 Os 6 Componentes</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.25rem">
+      <div style="background:#f7f7f7;border-radius:8px;padding:0.65rem 0.9rem"><span class="tag tb" style="margin-bottom:4px;display:inline-block">1</span><p style="font-size:13px;font-weight:600;color:#1a1a1a">Componente Fixo / Equidade</p><p style="font-size:12px;color:#555">Manutenção ("mesada") eSF, eAP, eSB, eMulti + recurso de implantação. Atualizado em 2025.</p></div>
+      <div style="background:#f7f7f7;border-radius:8px;padding:0.65rem 0.9rem"><span class="tag tg" style="margin-bottom:4px;display:inline-block">2</span><p style="font-size:13px;font-weight:600;color:#1a1a1a">Vínculo e Acompanhamento Territorial</p><p style="font-size:12px;color:#555">Cadastro (30%) + Acompanhamento (70%) — eSF e eAP</p></div>
+      <div style="background:#f7f7f7;border-radius:8px;padding:0.65rem 0.9rem"><span class="tag tp" style="margin-bottom:4px;display:inline-block">3</span><p style="font-size:13px;font-weight:600;color:#1a1a1a">Qualidade</p><p style="font-size:12px;color:#555">15 indicadores em 3 blocos — eSF, eAP, eSB e eMulti</p></div>
+      <div style="background:#f7f7f7;border-radius:8px;padding:0.65rem 0.9rem"><span class="tag ta" style="margin-bottom:4px;display:inline-block">4</span><p style="font-size:13px;font-weight:600;color:#1a1a1a">Implantação e Manutenção de Programas</p><p style="font-size:12px;color:#555">Consultório na Rua, eAPP, PSE, IAF, ACS etc.</p></div>
+      <div style="background:#f7f7f7;border-radius:8px;padding:0.65rem 0.9rem"><span class="tag tz" style="margin-bottom:4px;display:inline-block">5</span><p style="font-size:13px;font-weight:600;color:#1a1a1a">Atenção à Saúde Bucal</p><p style="font-size:12px;color:#555">Manutenção e expansão das eSB, insumos e equipamentos</p></div>
+      <div style="background:#f7f7f7;border-radius:8px;padding:0.65rem 0.9rem"><span class="tag tz" style="margin-bottom:4px;display:inline-block">6</span><p style="font-size:13px;font-weight:600;color:#1a1a1a">Per Capita Populacional</p><p style="font-size:12px;color:#555"><strong>R$ 5,95/habitante/ano</strong> — ações gerais da APS</p></div>
+    </div>
+  </div>
+
+  <div class="card" style="overflow-x:auto;margin-bottom:0.75rem">
+    <div class="label">3.2.1 Componente Fixo / Equidade — Manutenção mensal por Estrato IED (R$/mês)</div>
+    <table>
+      <thead><tr><th>Estrato IED</th><th>eSF</th><th>eAP 30h</th><th>eAP 20h</th></tr></thead>
+      <tbody>
+        <tr class="tr-blue"><td><strong>1</strong> — mais vulnerável</td><td>R$ 18.000</td><td>R$ 10.800</td><td>R$ 7.200</td></tr>
+        <tr><td><strong>2</strong></td><td>R$ 16.000</td><td>R$ 9.600</td><td>R$ 6.400</td></tr>
+        <tr><td><strong>3</strong></td><td>R$ 14.000</td><td>R$ 8.400</td><td>R$ 5.600</td></tr>
+        <tr><td><strong>4</strong> — menos vulnerável</td><td>R$ 12.000</td><td>R$ 7.200</td><td>R$ 4.800</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="overflow-x:auto;margin-bottom:0.75rem">
+    <div class="label">3.2.2 Componente Fixo / Equidade — Recurso de Implantação (parcela única)</div>
+    <table>
+      <thead><tr><th>Equipe</th><th>Valor</th></tr></thead>
+      <tbody>
+        <tr><td>eSF</td><td>R$ 30.000</td></tr>
+        <tr><td>eAP 30h</td><td>R$ 16.800</td></tr>
+        <tr><td>eAP 20h</td><td>R$ 10.800</td></tr>
+        <tr><td>eSB 40h</td><td>R$ 14.000</td></tr>
+        <tr><td>eMulti ampliada</td><td>R$ 36.000</td></tr>
+        <tr><td>eMulti complementar</td><td>R$ 24.000</td></tr>
+        <tr><td>eMulti estratégica</td><td>R$ 12.000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="label">IED — Índice de Equidade e Dimensionamento</div>
+    <p class="muted" style="margin-bottom:0.6rem">Corrige desigualdades combinando vulnerabilidade social (IVS) e porte populacional IBGE.</p>
+    <div class="callout cb">
+      <strong>Fórmula:</strong> IED = ((faixa IVS × 0,3) + (faixa porte IBGE × 0,2)) / 0,5<br>
+      Estratos de 1 a 4, do mais ao menos vulnerável. <strong>44% dos municípios brasileiros = Estrato 3.</strong>
+    </div>
+    <div class="two-col" style="margin-top:0.75rem">
+      <div>
+        <div class="label">IVS (faixas 1–5)</div>
+        <ul class="bl">
+          <li>1 — Muito alta vulnerabilidade</li>
+          <li>2 — Alta vulnerabilidade</li>
+          <li>3 — Média vulnerabilidade</li>
+          <li>4 — Baixa vulnerabilidade</li>
+          <li>5 — Muito baixa vulnerabilidade</li>
+        </ul>
+      </div>
+      <div>
+        <div class="label">Porte populacional (faixas 1–4)</div>
+        <ul class="bl">
+          <li>1 — Até 20 mil habitantes</li>
+          <li>2 — 20.001 a 50 mil</li>
+          <li>3 — 50.001 a 100 mil</li>
+          <li>4 — Acima de 100 mil</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. VÍNCULO E TERRITÓRIO -->
+<div id="sec-vinculo" class="sec">
+  <div class="callout ca" style="margin-bottom:0.75rem">
+    🎯 <strong>High-yield (R1):</strong> Cadastro = <strong>30%</strong> (até 3 pts) · Acompanhamento = <strong>70%</strong> (até 7 pts) · Nota total de 0 a 10. Crianças + idosos + BPC/Bolsa Família = peso até <strong>2,5</strong>.
+  </div>
+
+  <div class="card" style="margin-bottom:0.75rem">
+    <div class="label">4.3 Estrutura do Componente (escala 0–10)</div>
+    <div class="two-col" style="margin-bottom:0.75rem">
+      <div class="metric"><div class="metric-val">3 pts</div><div class="metric-lbl">Dimensão Cadastro (30%)<br>Completude e atualização no SISAB</div></div>
+      <div class="metric"><div class="metric-val">7 pts</div><div class="metric-lbl">Dimensão Acompanhamento (70%)<br>&gt;2 atendimentos anuais + ponderação de vulnerabilidade</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem">
+      <div class="metric" style="background:#E8F5E9"><div class="metric-val" style="font-size:16px;color:#1B5E20">Ótimo</div><div class="metric-lbl" style="color:#1B5E20">&gt; 8,5 pts</div></div>
+      <div class="metric" style="background:#E3F2FD"><div class="metric-val" style="font-size:16px;color:#0D47A1">Bom</div><div class="metric-lbl" style="color:#0D47A1">7,0 a 8,5</div></div>
+      <div class="metric" style="background:#FFF8E1"><div class="metric-val" style="font-size:16px;color:#7B5800">Suficiente</div><div class="metric-lbl" style="color:#7B5800">5,0 a 6,9</div></div>
+      <div class="metric" style="background:#FDECEA"><div class="metric-val" style="font-size:16px;color:#B71C1C">Regular</div><div class="metric-lbl" style="color:#B71C1C">&lt; 5,0</div></div>
+    </div>
+  </div>
+
+  <div class="card" style="overflow-x:auto;margin-bottom:0.75rem">
+    <div class="label">4.0 Critérios de Cálculo</div>
+    <table>
+      <thead><tr><th>Critério</th><th>Descrição</th></tr></thead>
+      <tbody>
+        <tr><td><strong>I — Vulnerabilidade</strong></td><td>Beneficiários do Bolsa Família (PBF) ou BPC</td></tr>
+        <tr><td><strong>II — Demografia</strong></td><td>Pessoas com 0–5 anos ou ≥ 60 anos</td></tr>
+        <tr><td><strong>III — Qualificação</strong></td><td>Completude e atualização dos cadastros no SISAB</td></tr>
+        <tr><td><strong>IV — População atendida</strong></td><td>Pessoas com registros de atendimentos, visitas ou procedimentos no SISAB</td></tr>
+        <tr class="tr-blue"><td><strong>V — Satisfação ★ novo</strong></td><td>Avaliação pelo app Meu SUS Digital</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="overflow-x:auto;margin-bottom:0.75rem">
+    <div class="label">4.4 Parâmetros populacionais por equipe</div>
+    <table>
+      <thead><tr><th>Porte populacional</th><th>eSF</th><th>eAP 30h</th><th>eAP 20h</th></tr></thead>
+      <tbody>
+        <tr><td>Até 20.000 hab.</td><td>2.000</td><td>1.500</td><td>1.000</td></tr>
+        <tr><td>20.001 a 50.000 hab.</td><td>2.500</td><td>1.875</td><td>1.250</td></tr>
+        <tr><td>50.001 a 100.000 hab.</td><td>2.750</td><td>2.063</td><td>1.375</td></tr>
+        <tr><td>Acima de 100.000 hab.</td><td>3.000</td><td>2.250</td><td>1.500</td></tr>
+      </tbody>
+    </table>
+    <div class="callout ca" style="margin-top:0.75rem">
+      <strong>Limite máximo:</strong> +50% do parâmetro base. Se excedido, a equipe fica limitada à classificação <strong>"Bom"</strong> no quadrimestre seguinte e não recebe a totalidade do repasse.
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:0.75rem">
+    <div class="label">4.6.1 Ponderações — Dimensão Acompanhamento</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem">
+      <div class="metric"><div class="metric-val" style="color:#555">1,0</div><div class="metric-lbl">População geral</div></div>
+      <div class="metric"><div class="metric-val" style="color:#1B5E20">1,2</div><div class="metric-lbl">Idoso ≥60a ou Criança ≤5a</div></div>
+      <div class="metric"><div class="metric-val" style="color:#7B5800">1,3</div><div class="metric-lbl">Beneficiário BPC ou Bolsa Família</div></div>
+      <div class="metric"><div class="metric-val" style="color:#B71C1C">2,5</div><div class="metric-lbl">Faixa etária extrema + benefício social</div></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:0.75rem">
+    <div class="label">4.6.2 Ponderações — Dimensão Cadastro</div>
+    <div class="two-col">
+      <div class="metric"><div class="metric-val" style="color:#555">0,75</div><div class="metric-lbl">Apenas Cadastro Individual</div></div>
+      <div class="metric" style="background:#E3F2FD"><div class="metric-val" style="color:#0D47A1">1,5</div><div class="metric-lbl">Individual + Territorial/Domiciliar ★</div></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:0.75rem">
+    <div class="label">4.7 Critério V — Satisfação (Meu SUS Digital)</div>
+    <div class="two-col">
+      <div class="metric"><div class="metric-val" style="color:#1B5E20">+0,15</div><div class="metric-lbl">Até 4,9% dos atendimentos avaliados</div></div>
+      <div class="metric" style="background:#E8F5E9"><div class="metric-val" style="color:#1B5E20">+0,30</div><div class="metric-lbl">≥ 5% dos atendimentos avaliados ★</div></div>
+    </div>
+  </div>
+
+  <div class="callout cg" style="margin-bottom:0.75rem">
+    <strong>4.8 Definição de "acompanhado":</strong> Exige-se obrigatoriamente <strong>mais de 2 atendimentos</strong> (individuais, coletivos ou visita domiciliar) em 1 ano. <strong>Apenas 1 visita NÃO gera pontuação</strong> no componente de acompanhamento.
+  </div>
+
+  <div class="card" style="margin-bottom:0.75rem">
+    <div class="label">4.2 Suspensão de 100% dos repasses (3 situações)</div>
+    <ul class="bl">
+      <li>Ausência de envio de produção ao <strong>SISAB</strong> por <strong>3 competências (meses) consecutivas</strong></li>
+      <li>Duplicidade de profissional em mais de uma equipe no <strong>SCNES</strong></li>
+      <li>Acúmulo superior a <strong>60 horas semanais</strong> por profissional no <strong>CNES</strong></li>
+    </ul>
+  </div>
+
+  <div class="callout cr" style="margin-bottom:0.75rem">
+    <strong>⚠️ 4.9 Regra inegociável:</strong> "É vedada a restrição de atendimento a qualquer pessoa nas UBS por ausência de cadastro prévio nas equipes." Negar atendimento por falta de ficha é juridicamente proibido.
+  </div>
+
+  <div class="card">
+    <div class="label">Desempate de vínculo (paciente atendido em múltiplos locais)</div>
+    <ul class="bl">
+      <li><strong>1º</strong> — Equipe com maior número de atendimentos no ano</li>
+      <li><strong>2º</strong> — Equipe do atendimento mais recente</li>
+      <li><strong>3º</strong> — Equipe com cadastro mais atualizado</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 5. QUALIDADE -->
+<div id="sec-qualidade" class="sec">
+  <div class="callout ca" style="margin-bottom:0.75rem">
+    🎯 <strong>High-yield (R1):</strong> 15 indicadores em 3 blocos. Pesos e metodologia de cálculo definidos após pactuação tripartite e publicados nas fichas do Ministério da Saúde.
+  </div>
+
+  <div class="card" style="overflow-x:auto;margin-bottom:0.75rem">
+    <div class="label">5.1 Componentes de Qualidade por Bloco</div>
+    <table>
+      <thead><tr><th>Bloco / Equipe</th><th>Indicador</th><th>Descrição</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="7" style="font-weight:600;color:#0D47A1;vertical-align:middle"><span class="tag tb">Bloco 1</span><br>eSF / eAP<br><em style="font-size:11px;font-weight:400;color:#888">Linhas de cuidado</em></td><td>Mais acesso à APS</td><td>Proporção de atendimentos programados em relação ao total</td></tr>
+        <tr><td>Cuidado — Diabetes</td><td>Consultas, exames, visitas e avaliação dos pés</td></tr>
+        <tr><td>Cuidado — Hipertensão</td><td>Aferição de PA, consultas e visitas domiciliares</td></tr>
+        <tr><td>Cuidado — Gestante e Puérpera</td><td>Acompanhamento no pré-natal e puerpério</td></tr>
+        <tr><td>Prevenção do Câncer (Mulher)</td><td>Rastreamento colo útero, mama e vacinação HPV</td></tr>
+        <tr><td>Cuidado — Pessoa Idosa</td><td>Vacinação, consultas, visitas e avaliação funcional</td></tr>
+        <tr><td>Desenvolvimento Infantil</td><td>Consultas, vacinação e visitas de 0 a 2 anos</td></tr>
+        <tr style="background:#f9f9f9"><td rowspan="6" style="font-weight:600;color:#1B5E20;vertical-align:middle"><span class="tag tg">Bloco 2</span><br>eSB<br><em style="font-size:11px;font-weight:400;color:#888">Saúde bucal</em></td><td>1ª consulta odontológica programada</td><td>Acesso à primeira consulta odontológica na APS</td></tr>
+        <tr style="background:#f9f9f9"><td>Tratamento odontológico concluído</td><td>Proporção de tratamentos finalizados em relação às primeiras consultas</td></tr>
+        <tr style="background:#f9f9f9"><td>Escovação dentária supervisionada</td><td>Crianças 6–12 anos atendidas em ações de escovação</td></tr>
+        <tr style="background:#f9f9f9"><td>Procedimentos preventivos</td><td>% de ações preventivas entre os procedimentos odontológicos</td></tr>
+        <tr style="background:#f9f9f9"><td>ART (Tratamento Restaurador)</td><td>Procedimentos de ART realizados na APS</td></tr>
+        <tr style="background:#f9f9f9"><td>Taxa de exodontias</td><td>Relação entre extrações e procedimentos preventivos/curativos</td></tr>
+        <tr class="tr-blue"><td rowspan="2" style="font-weight:600;color:#4527A0;vertical-align:middle"><span class="tag tp">Bloco 3</span><br>eMulti<br><em style="font-size:11px;font-weight:400;color:#888">Acesso ao serviço</em></td><td>Ações interprofissionais realizadas</td><td>Atividades integradas da eMulti com outras equipes</td></tr>
+        <tr class="tr-blue"><td>Média de atendimentos por pessoa</td><td>Média de atendimentos individuais e coletivos da eMulti</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="overflow-x:auto;margin-bottom:0.75rem">
+    <div class="label">5.2 Classificação de Desempenho</div>
+    <table>
+      <thead><tr><th>Classificação</th><th>Nota</th><th>Impacto financeiro</th></tr></thead>
+      <tbody>
+        <tr style="background:#E8F5E9"><td><span class="tag tg">Ótimo</span></td><td>&gt; 8,5</td><td>Repasse máximo do componente</td></tr>
+        <tr style="background:#E3F2FD"><td><span class="tag tb">Bom</span></td><td>7,0 a 8,5</td><td>Repasse padrão</td></tr>
+        <tr style="background:#FFF8E1"><td><span class="tag ta">Suficiente</span></td><td>5,0 a 6,9</td><td>Repasse reduzido</td></tr>
+        <tr style="background:#FDECEA"><td><span class="tag tr">Regular</span></td><td>&lt; 5,0</td><td>Repasse mínimo</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cp">
+    <div class="cp-label">📌 5.3 Complementações pelas diretrizes</div>
+    <div class="cp-body">
+      <strong>Rastreamento de IST (Portaria 7799/2025):</strong> Novo indicador obrigatório exclusivo para <strong>eAPP</strong> (Atenção Primária Prisional) e <strong>eCR</strong> (Consultório na Rua). Alinha as metas de qualidade ao combate à sífilis e HIV em populações vulneráveis.<br><br>
+      <strong>Incentivo Adicional Anual — NI Nº 4/2025:</strong> R$ 411,7 milhões repassados a municípios como bônus em parcela única no fim do ciclo — transferência direta aos profissionais, cursos de capacitação, congressos médicos e programas de bem-estar.
+    </div>
+  </div>
+</div>
+
+<!-- 6. OUTROS COMPONENTES -->
+<div id="sec-outros" class="sec">
+  <div class="card" style="margin-bottom:0.75rem">
+    <div class="label">6.1 — 4º Componente: Implantação e Manutenção de Programas</div>
+    <p class="muted" style="margin-bottom:0.5rem">Financia programas estratégicos, serviços e profissionais especiais na APS:</p>
+    <div class="badge-row" style="margin-bottom:0.6rem">
+      <span class="tag tb">Consultório na Rua (eCR)</span><span class="tag tb">UBS Fluvial</span><span class="tag tb">eAPP (Atenção Primária Prisional)</span><span class="tag tb">eMulti</span><span class="tag tb">PSE</span><span class="tag tb">ACS</span><span class="tag tg">IAF (Incentivo à Atividade Física)</span>
+    </div>
+    <p class="muted">Amplia cobertura de serviços, apoia estruturas específicas e financia equipes em populações em situação de vulnerabilidade.</p>
+  </div>
+
+  <div class="card" style="margin-bottom:0.75rem">
+    <div class="label">6.2 — 5º Componente: Atenção à Saúde Bucal</div>
+    <ul class="bl">
+      <li>Manutenção e expansão das eSB</li>
+      <li>Aquisição de materiais odontológicos, equipamentos e insumos</li>
+      <li><strong>Prevenção:</strong> educação em saúde, aplicação de flúor, escovação supervisionada</li>
+      <li><strong>Tratamento:</strong> consultas, restaurações, controle de cáries e doenças periodontais</li>
+      <li>Vinculado a indicadores de desempenho (Bloco 2 do Componente Qualidade)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="label">6.3 — 6º Componente: Per Capita (Base Populacional)</div>
+    <div class="three-col" style="margin-bottom:0.75rem">
+      <div class="metric"><div class="metric-val">R$ 5,95</div><div class="metric-lbl">por habitante / ano</div></div>
+      <div class="metric"><div class="metric-val">R$ 0,49</div><div class="metric-lbl">por habitante / mês</div></div>
+      <div class="metric"><div class="metric-val">Livre</div><div class="metric-lbl">uso para ações gerais da APS</div></div>
+    </div>
+    <ul class="bl">
+      <li>Útil para custear campanhas de promoção da saúde, compra de insumos, atividades coletivas e demandas não vinculadas a equipes específicas</li>
+      <li>Municípios com <strong>decréscimo populacional</strong> mantêm valores do ano anterior</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 7. ALGORITMO -->
+<div id="sec-algo" class="sec">
+  <div class="card">
+    <div class="label">8.1 Checklist Operacional — Repasse e Risco de Suspensão</div>
+    <div class="step-row" style="margin-top:0.5rem">
+      <div class="step-n">1</div>
+      <div>
+        <strong class="body-text">Avaliação inicial — Garantir qualidade do cadastro</strong>
+        <ul class="checklist" style="margin-top:0.4rem">
+          <li>Preencher cadastros na modalidade <strong>completa</strong>: Individual + Territorial/Domiciliar (ponderação <strong>1,5</strong> vs 0,75)</li>
+          <li>Verificar se o número de pessoas vinculadas não ultrapassa <strong>+50%</strong> do parâmetro do porte municipal</li>
+          <li>Garantir envio regular ao <strong>SISAB</strong> — nunca deixar <strong>3 meses</strong> sem envio</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="divider">
+    <div class="step-row">
+      <div class="step-n">2</div>
+      <div>
+        <strong class="body-text">Estratificação — Priorizar captação qualificada</strong>
+        <ul class="checklist" style="margin-top:0.4rem">
+          <li>Priorizar: crianças (≤5a), idosos (≥60a) e beneficiários de BPC/Bolsa Família (peso até <strong>2,5</strong>)</li>
+          <li>Monitorar quadrimestralmente a nota do Componente Qualidade: meta <strong>&gt; 8,5</strong> para classificação Ótimo</li>
+          <li>Orientar pacientes sobre o app <strong>Meu SUS Digital</strong> — meta: <strong>≥ 5%</strong> avaliações → <strong>+0,30</strong> no escore</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="divider">
+    <div class="step-row">
+      <div class="step-n">3</div>
+      <div>
+        <strong class="body-text">Seguimento — Manter vínculo e evitar suspensão</strong>
+        <ul class="checklist" style="margin-top:0.4rem">
+          <li>Garantir <strong>&gt; 2 atendimentos/visitas por paciente ao ano</strong> para validar o componente de acompanhamento</li>
+          <li><strong>Nunca negar atendimento</strong> por ausência de cadastro (vedação legal)</li>
+          <li>Verificar regularmente o <strong>SCNES/CNES</strong> para evitar duplicidade de profissionais (<strong>&gt;60h/semana</strong>)</li>
+          <li>Registrar todas as ações de <strong>eAPP</strong> e <strong>eCR</strong> com indicador de <strong>Rastreamento de IST</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. ERROS E PEGADINHAS -->
+<div id="sec-erros" class="sec">
+  <div class="callout cr" style="margin-bottom:0.75rem">
+    <strong>⚠️ Nunca trate o Previne Brasil como modelo vigente.</strong> Ele foi completamente revogado em 2024. Nomenclaturas como "Capitação Ponderada" e "Pagamento por Desempenho" não existem mais legalmente.
+  </div>
+  <div class="card" style="margin-bottom:0.75rem">
+    <ul class="bl">
+      <li style="margin-bottom:0.75rem"><strong>Erro frequente na prática:</strong> Negar atendimento a paciente de outro bairro por ausência de ficha na unidade. A diretriz proíbe expressamente a "restrição de acesso por ausência de cadastro prévio".</li>
+      <li style="margin-bottom:0.75rem"><strong>Pegadinha em prova:</strong> Chamar o modelo atual de "Previne Brasil" ou usar seus termos (Capitação Ponderada, Pagamento por Desempenho). Revogado desde abril de 2024.</li>
+      <li style="margin-bottom:0.75rem"><strong>Pegadinha — "estar acompanhado":</strong> O paciente cadastrado <strong>não</strong> gera verba da dimensão acompanhamento se comparecer apenas uma vez. Exige-se <strong>mais de 2 atendimentos anuais</strong>.</li>
+      <li style="margin-bottom:0.75rem"><strong>Contraindicação financeira — duplicidade:</strong> Profissional com registro em SCNES totalizando <strong>&gt; 60h/semana</strong> → o MS cruza o CPF e efetua bloqueio financeiro à equipe.</li>
+      <li style="margin-bottom:0.75rem"><strong>Contraindicação financeira — SISAB:</strong> Ausência de envio de produção por <strong>3 meses consecutivos</strong> → suspensão de <strong>100%</strong> dos repasses.</li>
+      <li><strong>Pegadinha do limite de cadastros:</strong> Cadastrar além de <strong>150% do parâmetro</strong> não aumenta o repasse — trava a classificação no nível <strong>"Bom"</strong> no quadrimestre seguinte.</li>
+    </ul>
+  </div>
+  <div class="callout ca">
+    🎯 <strong>Resumo das causas de suspensão de 100%:</strong><br>
+    · SISAB sem envio por <strong>3 meses</strong> consecutivos<br>
+    · Duplicidade de profissional no <strong>SCNES</strong><br>
+    · Acúmulo <strong>&gt; 60h/semana</strong> no CNES
+  </div>
+</div>
+
+</div>
+<script>
+function show(id){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('open'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('open');
+  var map={visao:0,marcos:1,estrutura:2,vinculo:3,qualidade:4,outros:5,algo:6,erros:7};
+  document.querySelectorAll('.nav-btn')[map[id]].classList.add('active');
+}
+</script>
+</body>
+</html>
